@@ -1,6 +1,14 @@
 <script>
   let { size = 28, className = '' } = $props();
-  const clipId = `az-logo-${Math.random().toString(36).slice(2, 8)}`;
+  const uid = Math.random().toString(36).slice(2, 8);
+  const clipId = `az-clip-${uid}`;
+  const blueId = `az-blue-${uid}`;
+  const silverId = `az-silver-${uid}`;
+  const glossId = `az-gloss-${uid}`;
+  const bevelId = `az-bevel-${uid}`;
+  const blackId = `az-black-${uid}`;
+  const starId = `az-star-${uid}`;
+  const depthId = `az-depth-${uid}`;
 </script>
 
 <svg
@@ -16,22 +24,97 @@
     <clipPath id={clipId}>
       <rect x="8" y="8" width="112" height="112" rx="22" />
     </clipPath>
+
+    <!-- BMW M3 E46 GTR Metallic Racing Blue Livery Gradient -->
+    <linearGradient id={blueId} x1="12" y1="8" x2="116" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0039A6" />
+      <stop offset="32%" stop-color="#0059FF" />
+      <stop offset="56%" stop-color="#3E8EFF" />
+      <stop offset="82%" stop-color="#0059FF" />
+      <stop offset="100%" stop-color="#00297A" />
+    </linearGradient>
+
+    <!-- Brushed Metallic Silver Livery Gradient (#BDBDBD base with specular sheen) -->
+    <linearGradient id={silverId} x1="16" y1="10" x2="112" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9A9FA8" />
+      <stop offset="28%" stop-color="#BDBDBD" />
+      <stop offset="52%" stop-color="#F2F5F9" />
+      <stop offset="76%" stop-color="#BDBDBD" />
+      <stop offset="100%" stop-color="#848A94" />
+    </linearGradient>
+
+    <!-- Automotive Clearcoat Top Gloss Sweep -->
+    <linearGradient id={glossId} x1="22" y1="8" x2="96" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.52" />
+      <stop offset="48%" stop-color="#FFFFFF" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Smooth Bottom Depth Shadow -->
+    <linearGradient id={depthId} x1="64" y1="74" x2="64" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#001033" stop-opacity="0" />
+      <stop offset="100%" stop-color="#001033" stop-opacity="0.26" />
+    </linearGradient>
+
+    <!-- Inner Metallic Rim Bevel Highlight -->
+    <linearGradient id={bevelId} x1="12" y1="12" x2="116" y2="116" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55" />
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#001642" stop-opacity="0.45" />
+    </linearGradient>
+
+    <!-- Piano-Black Gloss Gradient for 'A' -->
+    <linearGradient id={blackId} x1="24" y1="24" x2="88" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#272A34" />
+      <stop offset="32%" stop-color="#0A0A0C" />
+      <stop offset="100%" stop-color="#050507" />
+    </linearGradient>
+
+    <!-- Pearl Chrome Gradient for 5-Pointed Star -->
+    <linearGradient id={starId} x1="70" y1="62" x2="108" y2="106" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="55%" stop-color="#F1F5F9" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
   </defs>
 
-  <!-- Diagonal Electric Blue (#0059FF) & Silver (#BDBDBD) Stripes -->
+  <!-- Metallic Diagonal GTR Blue & Silver Stripes -->
   <g clip-path={`url(#${clipId})`}>
-    <rect x="0" y="0" width="128" height="128" fill="#0059FF" />
+    <rect x="0" y="0" width="128" height="128" fill={`url(#${blueId})`} />
     <g transform="translate(64 64) rotate(-35)">
-      <rect x="-100" y="-130" width="20" height="260" fill="#BDBDBD" />
-      <rect x="-60" y="-130" width="20" height="260" fill="#BDBDBD" />
-      <rect x="-20" y="-130" width="20" height="260" fill="#BDBDBD" />
-      <rect x="20" y="-130" width="20" height="260" fill="#BDBDBD" />
-      <rect x="60" y="-130" width="20" height="260" fill="#BDBDBD" />
-      <rect x="100" y="-130" width="20" height="260" fill="#BDBDBD" />
+      <rect x="-100" y="-130" width="20" height="260" fill={`url(#${silverId})`} />
+      <rect x="-60" y="-130" width="20" height="260" fill={`url(#${silverId})`} />
+      <rect x="-20" y="-130" width="20" height="260" fill={`url(#${silverId})`} />
+      <rect x="20" y="-130" width="20" height="260" fill={`url(#${silverId})`} />
+      <rect x="60" y="-130" width="20" height="260" fill={`url(#${silverId})`} />
+      <rect x="100" y="-130" width="20" height="260" fill={`url(#${silverId})`} />
+      <!-- Subtle crisp metallic pinstriping along stripe edges -->
+      <rect x="-40.8" y="-130" width="1.6" height="260" fill="#FFFFFF" opacity="0.26" />
+      <rect x="-0.8" y="-130" width="1.6" height="260" fill="#FFFFFF" opacity="0.3" />
+      <rect x="39.2" y="-130" width="1.6" height="260" fill="#FFFFFF" opacity="0.26" />
     </g>
+
+    <!-- Curved Upper Automotive Clearcoat Reflection -->
+    <path
+      d="M 8 8 L 120 8 L 120 48 C 88 64, 42 74, 8 60 Z"
+      fill={`url(#${glossId})`}
+    />
+    <!-- Smooth Bottom Depth Vignette -->
+    <rect x="8" y="74" width="112" height="46" fill={`url(#${depthId})`} />
   </g>
 
-  <!-- Rounded Square Bold Black Border -->
+  <!-- Inner Bevel Sheen Just Inside Border -->
+  <rect
+    x="11"
+    y="11"
+    width="106"
+    height="106"
+    rx="19"
+    stroke={`url(#${bevelId})`}
+    stroke-width="2"
+  />
+
+  <!-- Rounded Square Bold Black Outer Frame -->
   <rect
     x="7"
     y="7"
@@ -42,19 +125,27 @@
     stroke-width="8"
   />
 
-  <!-- Bold Forward-Slanted 'A' -->
+  <!-- Bold Forward-Slanted 'A' (Piano-Black Gloss) -->
   <path
     fill-rule="evenodd"
     clip-rule="evenodd"
     d="M 55 24 L 77 24 L 89 92 L 71 92 L 68.5 76 L 43 76 L 36.5 92 L 19 92 Z M 61.5 41.5 L 48.5 63 L 66 63 Z"
-    fill="#0A0A0A"
+    fill={`url(#${blackId})`}
+  />
+  <!-- Subtle Top Edge Glint on 'A' -->
+  <path
+    d="M 55.8 25.4 L 76.2 25.4"
+    stroke="#FFFFFF"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    opacity="0.35"
   />
 
-  <!-- Five-Pointed Star Tucked at Lower-Right Leg -->
+  <!-- Five-Pointed Pearl Chrome Star Tucked at Lower-Right Leg -->
   <g transform="translate(88 86) rotate(8)">
     <polygon
       points="0,-24 6.2,-8.2 23,-7.4 9.8,3.2 14.2,19.4 0,10.2 -14.2,19.4 -9.8,3.2 -23,-7.4 -6.2,-8.2"
-      fill="#FFFFFF"
+      fill={`url(#${starId})`}
       stroke="#0A0A0A"
       stroke-width="5"
       stroke-linejoin="miter"
