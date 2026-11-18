@@ -96,7 +96,7 @@
     <a
       href="#top"
       onclick={(e) => handleNavClick(e, '#top')}
-      class="pointer-events-auto inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border transition-all duration-200 bg-[#E2E2E2]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/15 dark:border-white/20 text-[#0A0A0A] dark:text-white hover:border-[#0EA5E9] {isScrolled
+      class="pointer-events-auto inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border transition-all duration-200 bg-[#BDBDBD]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/20 dark:border-white/20 text-[#0A0A0A] dark:text-white hover:border-[#0EA5E9] {isScrolled
         ? 'shadow-[0_8px_24px_rgba(0,0,0,0.16)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.45)]'
         : 'shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_6px_18px_rgba(10,10,28,0.28)]'}"
       aria-label={t.ui.homeAria}
@@ -111,7 +111,7 @@
     <div class="pointer-events-auto flex items-center gap-1.5 sm:gap-2.5">
       <!-- Desktop Quick Anchor Pills -->
       <nav
-        class="hidden lg:inline-flex items-center gap-1 p-1.5 rounded-full border transition-all duration-200 bg-[#E2E2E2]/90 dark:bg-[#090B14]/80 backdrop-blur-md border-black/15 dark:border-white/20 shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.4)]"
+        class="hidden lg:inline-flex items-center gap-1 p-1.5 rounded-full border transition-all duration-200 bg-[#BDBDBD]/90 dark:bg-[#090B14]/80 backdrop-blur-md border-black/20 dark:border-white/20 shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.4)]"
         aria-label="Navigasi utama"
       >
         {#each t.navLinks as link}
@@ -121,7 +121,7 @@
             onclick={(e) => handleNavClick(e, link.href)}
             class="px-3.5 py-1.5 rounded-full text-[13px] font-semibold tracking-wide transition-all duration-200 {isActive
               ? 'bg-[#0059FF] text-white shadow-[0_2px_10px_rgba(0,89,255,0.45)]'
-              : 'text-[#1A1A1A] hover:text-black hover:bg-black/8 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/10'}"
+              : 'text-[#0A0A0A] hover:text-black hover:bg-black/10 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/10'}"
           >
             {link.label}
           </a>
@@ -130,7 +130,7 @@
 
       <!-- Language Switcher Pill (ID | EN) -->
       <div
-        class="inline-flex items-center p-0.5 sm:p-1 rounded-full border bg-[#E2E2E2]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/15 dark:border-white/20 shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)]"
+        class="inline-flex items-center p-0.5 sm:p-1 rounded-full border bg-[#BDBDBD]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/20 dark:border-white/20 shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)]"
         role="group"
         aria-label="Language switcher"
       >
@@ -140,7 +140,7 @@
           aria-pressed={preferences.lang === 'id'}
           class="px-2 sm:px-2.5 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all cursor-pointer {preferences.lang === 'id'
             ? 'bg-[#0059FF] text-white shadow-sm'
-            : 'text-[#262626] hover:text-black dark:text-slate-300 dark:hover:text-white'}"
+            : 'text-[#1A1A1A] hover:text-black dark:text-slate-300 dark:hover:text-white'}"
         >
           ID
         </button>
@@ -150,7 +150,7 @@
           aria-pressed={preferences.lang === 'en'}
           class="px-2 sm:px-2.5 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all cursor-pointer {preferences.lang === 'en'
             ? 'bg-[#0059FF] text-white shadow-sm'
-            : 'text-[#262626] hover:text-black dark:text-slate-300 dark:hover:text-white'}"
+            : 'text-[#1A1A1A] hover:text-black dark:text-slate-300 dark:hover:text-white'}"
         >
           EN
         </button>
@@ -162,7 +162,7 @@
         onclick={preferences.toggleTheme}
         aria-label={preferences.theme === 'dark' ? t.ui.switchToLightAria : t.ui.switchToDarkAria}
         title={preferences.theme === 'dark' ? t.ui.switchToLightAria : t.ui.switchToDarkAria}
-        class="w-8 h-8 sm:w-9 sm:h-9 rounded-full inline-flex items-center justify-center border bg-[#E2E2E2]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/15 dark:border-white/20 text-[#0040B8] dark:text-[#FACC15] hover:border-[#0EA5E9] shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)] transition-all cursor-pointer shrink-0"
+        class="w-8 h-8 sm:w-9 sm:h-9 rounded-full inline-flex items-center justify-center border bg-[#BDBDBD]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/20 dark:border-white/20 text-[#0040B8] dark:text-[#FACC15] hover:border-[#0EA5E9] shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)] transition-all cursor-pointer shrink-0"
       >
         {#if preferences.theme === 'dark'}
           <Sun size={16} strokeWidth={2.3} />

@@ -44,11 +44,11 @@
 <section
   bind:this={heroEl}
   id="top"
-  class="relative min-h-[100svh] lg:min-h-[680px] lg:h-[100svh] lg:max-h-[940px] w-full overflow-hidden bg-[#BDBDBD] text-[#0A0A0A] dark:bg-[#0059FF] dark:text-white flex flex-col justify-between pt-20 sm:pt-24 lg:pt-20 transition-colors duration-300"
+  class="relative min-h-[100svh] lg:min-h-[680px] lg:h-[100svh] lg:max-h-[940px] w-full overflow-hidden bg-[#0059FF] text-[#BDBDBD] dark:text-white flex flex-col justify-between pt-20 sm:pt-24 lg:pt-20 transition-colors duration-300"
 >
-  <!-- Subtle poster ambient depth (no red) -->
+  <!-- Subtle poster ambient depth (same #0059FF primary blue in both modes) -->
   <div
-    class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_48%,rgba(14,165,233,0.12),transparent_52%),radial-gradient(circle_at_15%_20%,rgba(0,89,255,0.10),transparent_48%)] dark:bg-[radial-gradient(circle_at_78%_48%,rgba(56,189,248,0.22),transparent_52%),radial-gradient(circle_at_15%_20%,rgba(128,173,255,0.24),transparent_45%)]"
+    class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_48%,rgba(56,189,248,0.20),transparent_52%),radial-gradient(circle_at_15%_20%,rgba(189,189,189,0.16),transparent_45%)] dark:bg-[radial-gradient(circle_at_78%_48%,rgba(56,189,248,0.22),transparent_52%),radial-gradient(circle_at_15%_20%,rgba(128,173,255,0.24),transparent_45%)]"
     aria-hidden="true"
   ></div>
 
@@ -63,7 +63,7 @@
       rel="noopener noreferrer"
       title={`Instagram ${CONTACT_INFO.instagram.handle}`}
       aria-label={`Instagram ${CONTACT_INFO.instagram.handle}`}
-      class="group p-2 rounded-lg text-[#0A0A0A]/80 hover:text-[#0040B8] hover:bg-black/8 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/15 hover:scale-110 transition-all duration-200"
+      class="group p-2 rounded-lg text-[#BDBDBD] hover:text-[#E0E0E0] hover:bg-black/15 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/15 hover:scale-110 transition-all duration-200"
     >
       <InstagramIcon size={21} />
     </a>
@@ -72,7 +72,7 @@
       href={CONTACT_INFO.email.mailto}
       title={`Email ${CONTACT_INFO.email.address}`}
       aria-label={`Email ${CONTACT_INFO.email.address}`}
-      class="group p-2 rounded-lg text-[#0A0A0A]/80 hover:text-[#0040B8] hover:bg-black/8 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/15 hover:scale-110 transition-all duration-200"
+      class="group p-2 rounded-lg text-[#BDBDBD] hover:text-[#E0E0E0] hover:bg-black/15 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/15 hover:scale-110 transition-all duration-200"
     >
       <Mail size={21} strokeWidth={2} />
     </a>
@@ -83,7 +83,7 @@
       rel="noopener noreferrer"
       title={`WhatsApp ${CONTACT_INFO.whatsapp.display}`}
       aria-label={`WhatsApp ${CONTACT_INFO.whatsapp.display}`}
-      class="group p-2 rounded-lg text-[#0A0A0A]/80 hover:text-[#0040B8] hover:bg-black/8 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/15 hover:scale-110 transition-all duration-200"
+      class="group p-2 rounded-lg text-[#BDBDBD] hover:text-[#E0E0E0] hover:bg-black/15 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/15 hover:scale-110 transition-all duration-200"
     >
       <MessageCircle size={21} strokeWidth={2} />
     </a>
@@ -95,10 +95,10 @@
     <div class="w-full lg:w-[62%] sm:pl-12 lg:pl-14 xl:pl-16 flex-1 flex flex-col justify-between py-4 sm:py-8 lg:py-12">
       <div class="hidden lg:block"></div>
 
-      <!-- Bold Editorial Typography -->
+      <!-- Bold Editorial Typography (White in Dark Mode, #BDBDBD Silver in Light Mode) -->
       <div class="my-auto py-4">
         <div class="inline-flex flex-col items-start">
-          <span class="font-display text-[#0059FF] dark:text-white text-5xl sm:text-7xl lg:text-[5.25rem] xl:text-[6rem] leading-[0.95] tracking-normal transition-colors">
+          <span class="font-display text-[#BDBDBD] dark:text-white text-5xl sm:text-7xl lg:text-[5.25rem] xl:text-[6rem] leading-[0.95] tracking-normal transition-colors">
             {t.hero.greeting}
           </span>
 
@@ -106,7 +106,7 @@
             {t.hero.name}
           </h1>
 
-          <p class="font-display text-[#003BB5] dark:text-white text-xl sm:text-2xl lg:text-[1.85rem] xl:text-[2.1rem] tracking-wide self-end mt-2.5 sm:mt-3 transition-colors">
+          <p class="font-display text-[#BDBDBD] dark:text-white text-xl sm:text-2xl lg:text-[1.85rem] xl:text-[2.1rem] tracking-wide self-end mt-2.5 sm:mt-3 transition-colors">
             {t.hero.subtitle}
           </p>
         </div>
@@ -126,7 +126,7 @@
             href={CV_INFO.href}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#E2E2E2] hover:bg-[#EEEEEE] text-[#0A0A0A] border border-black/20 hover:border-[#0040B8] dark:bg-[#090B14]/70 dark:hover:bg-[#090B14]/90 dark:text-white dark:border-white/25 dark:hover:border-[#0EA5E9] backdrop-blur-md text-xs sm:text-[13px] font-semibold tracking-wide transition-colors duration-200"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#BDBDBD] hover:bg-[#CFCFCF] text-[#0A0A0A] border-2 border-[#0A0A0A]/30 hover:border-[#0A0A0A] dark:bg-[#090B14]/70 dark:hover:bg-[#090B14]/90 dark:text-white dark:border-white/25 dark:hover:border-[#0EA5E9] backdrop-blur-md text-xs sm:text-[13px] font-semibold tracking-wide transition-colors duration-200"
           >
             <Eye size={15} />
             <span>{t.ui.viewCv}</span>
@@ -140,14 +140,14 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Instagram ${CONTACT_INFO.instagram.handle}`}
-            class="p-2.5 rounded-lg bg-black/10 text-[#0A0A0A] hover:bg-black/15 dark:bg-white/15 dark:text-white dark:hover:bg-white/25 transition-colors"
+            class="p-2.5 rounded-lg bg-black/15 text-[#BDBDBD] hover:text-white dark:bg-white/15 dark:text-white dark:hover:bg-white/25 transition-colors"
           >
             <InstagramIcon size={20} />
           </a>
           <a
             href={CONTACT_INFO.email.mailto}
             aria-label={`Email ${CONTACT_INFO.email.address}`}
-            class="p-2.5 rounded-lg bg-black/10 text-[#0A0A0A] hover:bg-black/15 dark:bg-white/15 dark:text-white dark:hover:bg-white/25 transition-colors"
+            class="p-2.5 rounded-lg bg-black/15 text-[#BDBDBD] hover:text-white dark:bg-white/15 dark:text-white dark:hover:bg-white/25 transition-colors"
           >
             <Mail size={20} />
           </a>
@@ -156,7 +156,7 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`WhatsApp ${CONTACT_INFO.whatsapp.display}`}
-            class="p-2.5 rounded-lg bg-black/10 text-[#0A0A0A] hover:bg-black/15 dark:bg-white/15 dark:text-white dark:hover:bg-white/25 transition-colors"
+            class="p-2.5 rounded-lg bg-black/15 text-[#BDBDBD] hover:text-white dark:bg-white/15 dark:text-white dark:hover:bg-white/25 transition-colors"
           >
             <MessageCircle size={20} />
           </a>
@@ -165,11 +165,11 @@
 
       <!-- Bottom 3 Highlights Separated by Thin Vertical Lines -->
       <div class="pt-4 lg:pt-8">
-        <div class="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap items-start md:items-center gap-3 md:gap-0 text-xs lg:text-[11.5px] xl:text-[12px] font-semibold sm:font-medium text-[#0A0A0A] dark:text-white/95 transition-colors">
+        <div class="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap items-start md:items-center gap-3 md:gap-0 text-xs lg:text-[11.5px] xl:text-[12px] font-semibold sm:font-medium text-[#BDBDBD] dark:text-white/95 transition-colors">
           {#each t.hero.highlights as item, idx}
             {#if idx > 0}
               <span
-                class="hidden md:inline-block w-px h-4 bg-black/30 dark:bg-white/40 mx-2 xl:mx-3 shrink-0"
+                class="hidden md:inline-block w-px h-4 bg-[#BDBDBD]/50 dark:bg-white/40 mx-2 xl:mx-3 shrink-0"
                 aria-hidden="true"
               ></span>
             {/if}
