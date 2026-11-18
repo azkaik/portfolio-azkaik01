@@ -57,9 +57,9 @@
   id="contact"
   class="scroll-mt-16 relative bg-white text-slate-900 dark:bg-[#070B14] dark:text-slate-100 pt-20 pb-12 px-6 sm:px-10 lg:px-16 border-t border-slate-200/80 dark:border-white/8 overflow-hidden transition-colors duration-300"
 >
-  <!-- Subtle ambient indigo-cyan glow -->
+  <!-- Subtle ambient cobalt-cyan glow -->
   <div
-    class="pointer-events-none absolute -bottom-32 right-1/4 w-[420px] h-[280px] rounded-full bg-[#4F46E5]/8 dark:bg-[#4F46E5]/12 blur-[120px]"
+    class="pointer-events-none absolute -bottom-32 right-1/4 w-[420px] h-[280px] rounded-full bg-[#0059FF]/8 dark:bg-[#0059FF]/14 blur-[120px]"
     aria-hidden="true"
   ></div>
 
@@ -67,7 +67,7 @@
     <!-- Section Heading -->
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
       <div>
-        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#4F46E5] dark:text-[#6366F1] mb-3">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#0059FF] dark:text-[#4D8CFF] mb-3">
           <span class="w-6 h-[2px] bg-[#0EA5E9]"></span>
           <span>{t.contact.eyebrow}</span>
         </div>
@@ -88,10 +88,10 @@
         href={CONTACT_INFO.instagram.url}
         target="_blank"
         rel="noopener noreferrer"
-        class="group rounded-2xl bg-slate-50 hover:bg-[#EEF2FF]/70 dark:bg-[#101626] dark:hover:bg-[#141D33] border border-slate-200 hover:border-[#4F46E5]/55 dark:border-white/10 dark:hover:border-[#6366F1]/60 p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none"
+        class="group rounded-2xl bg-slate-50 hover:bg-[#EBF2FF]/70 dark:bg-[#101626] dark:hover:bg-[#141D33] border border-slate-200 hover:border-[#0059FF]/55 dark:border-white/10 dark:hover:border-[#0059FF]/65 p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none"
       >
         <div class="flex items-center justify-between">
-          <div class="w-10 h-10 rounded-xl bg-[#4F46E5]/10 dark:bg-[#6366F1]/15 border border-[#4F46E5]/25 dark:border-[#6366F1]/35 flex items-center justify-center text-[#4F46E5] dark:text-[#818CF8]">
+          <div class="w-10 h-10 rounded-xl bg-[#0059FF]/10 dark:bg-[#0059FF]/18 border border-[#0059FF]/25 dark:border-[#4D8CFF]/35 flex items-center justify-center text-[#0059FF] dark:text-[#4D8CFF]">
             <InstagramIcon size={20} />
           </div>
           <ArrowUpRight size={18} class="text-slate-400 dark:text-slate-500 group-hover:text-slate-900 dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
@@ -100,7 +100,7 @@
           <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
             Instagram
           </p>
-          <p class="mt-1 text-base font-bold text-slate-900 dark:text-white group-hover:text-[#4F46E5] dark:group-hover:text-[#A5B4FC] transition-colors">
+          <p class="mt-1 text-base font-bold text-slate-900 dark:text-white group-hover:text-[#0059FF] dark:group-hover:text-[#80ADFF] transition-colors">
             {CONTACT_INFO.instagram.handle}
           </p>
         </div>
@@ -115,7 +115,7 @@
           <button
             type="button"
             onclick={copyEmail}
-            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#4F46E5]/10 hover:bg-[#4F46E5] text-[#4F46E5] hover:text-white border border-[#4F46E5]/30 dark:bg-[#6366F1]/20 dark:hover:bg-[#6366F1] dark:text-[#C7D2FE] dark:hover:text-white dark:border-[#6366F1]/40 transition-colors cursor-pointer"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#0059FF]/10 hover:bg-[#0059FF] text-[#0059FF] hover:text-white border border-[#0059FF]/30 dark:bg-[#0059FF]/22 dark:hover:bg-[#0059FF] dark:text-[#99BCFF] dark:hover:text-white dark:border-[#4D8CFF]/40 transition-colors cursor-pointer"
             aria-label={t.contact.copyAria}
           >
             {#if copied}
@@ -146,10 +146,10 @@
         href={CONTACT_INFO.whatsapp.url}
         target="_blank"
         rel="noopener noreferrer"
-        class="group rounded-2xl bg-slate-50 hover:bg-[#EEF2FF]/70 dark:bg-[#101626] dark:hover:bg-[#141D33] border border-slate-200 hover:border-[#4F46E5]/55 dark:border-white/10 dark:hover:border-[#6366F1]/60 p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none"
+        class="group rounded-2xl bg-slate-50 hover:bg-[#EBF2FF]/70 dark:bg-[#101626] dark:hover:bg-[#141D33] border border-slate-200 hover:border-[#0059FF]/55 dark:border-white/10 dark:hover:border-[#0059FF]/65 p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none"
       >
         <div class="flex items-center justify-between">
-          <div class="w-10 h-10 rounded-xl bg-[#4F46E5]/10 dark:bg-[#6366F1]/15 border border-[#4F46E5]/25 dark:border-[#6366F1]/35 flex items-center justify-center text-[#4F46E5] dark:text-[#818CF8]">
+          <div class="w-10 h-10 rounded-xl bg-[#0059FF]/10 dark:bg-[#0059FF]/18 border border-[#0059FF]/25 dark:border-[#4D8CFF]/35 flex items-center justify-center text-[#0059FF] dark:text-[#4D8CFF]">
             <Phone size={20} />
           </div>
           <ArrowUpRight size={18} class="text-slate-400 dark:text-slate-500 group-hover:text-slate-900 dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
@@ -158,7 +158,7 @@
           <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
             {t.contact.whatsappLabel}
           </p>
-          <p class="mt-1 text-base font-bold text-slate-900 dark:text-white group-hover:text-[#4F46E5] dark:group-hover:text-[#A5B4FC] transition-colors">
+          <p class="mt-1 text-base font-bold text-slate-900 dark:text-white group-hover:text-[#0059FF] dark:group-hover:text-[#80ADFF] transition-colors">
             {CONTACT_INFO.whatsapp.display}
           </p>
         </div>
@@ -190,7 +190,7 @@
 
       <a
         href="#top"
-        class="inline-flex items-center gap-1.5 text-slate-600 hover:text-[#4F46E5] dark:text-slate-300 dark:hover:text-[#38BDF8] transition-colors font-medium"
+        class="inline-flex items-center gap-1.5 text-slate-600 hover:text-[#0059FF] dark:text-slate-300 dark:hover:text-[#38BDF8] transition-colors font-medium"
       >
         <span>{t.contact.backToTop}</span>
         <ArrowUp size={15} />
@@ -203,12 +203,12 @@
     <div
       role="status"
       aria-live="polite"
-      class="fixed top-24 right-6 z-50 animate-toast-in flex items-center gap-3 px-4 py-3 rounded-xl bg-white/95 dark:bg-[#111827]/95 backdrop-blur-md border border-[#4F46E5]/40 dark:border-[#6366F1]/60 shadow-[0_12px_32px_rgba(15,23,42,0.18)] dark:shadow-[0_12px_32px_rgba(0,0,0,0.5)] text-sm font-medium text-slate-900 dark:text-white"
+      class="fixed top-24 right-6 z-50 animate-toast-in flex items-center gap-3 px-4 py-3 rounded-xl bg-white/95 dark:bg-[#111827]/95 backdrop-blur-md border border-[#0059FF]/40 dark:border-[#4D8CFF]/60 shadow-[0_12px_32px_rgba(15,23,42,0.18)] dark:shadow-[0_12px_32px_rgba(0,0,0,0.5)] text-sm font-medium text-slate-900 dark:text-white"
     >
       <span class="w-6 h-6 rounded-full bg-[#0EA5E9]/15 dark:bg-[#0EA5E9]/20 text-[#0284C7] dark:text-[#38BDF8] flex items-center justify-center shrink-0">
         <Check size={14} />
       </span>
-      <span>{t.contact.toastPrefix} <strong class="text-[#4F46E5] dark:text-[#A5B4FC]">{CONTACT_INFO.email.address}</strong> {t.contact.toastSuffix}</span>
+      <span>{t.contact.toastPrefix} <strong class="text-[#0059FF] dark:text-[#80ADFF]">{CONTACT_INFO.email.address}</strong> {t.contact.toastSuffix}</span>
     </div>
   {/if}
 </section>

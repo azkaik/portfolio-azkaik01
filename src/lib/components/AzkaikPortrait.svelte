@@ -9,9 +9,9 @@
   class="relative w-full h-full flex items-end justify-end select-none pointer-events-none"
   aria-hidden="true"
 >
-  <!-- Subtle ambient indigo-cyan backlight glow behind character -->
+  <!-- Subtle ambient cobalt-cyan backlight glow behind character -->
   <div
-    class="absolute right-6 bottom-6 w-[78%] h-[74%] rounded-full bg-radial from-[#38BDF8]/28 via-[#818CF8]/18 to-transparent blur-3xl transition-transform duration-300 ease-out"
+    class="absolute right-6 bottom-6 w-[78%] h-[74%] rounded-full bg-radial from-[#38BDF8]/28 via-[#4D8CFF]/20 to-transparent blur-3xl transition-transform duration-300 ease-out"
     style="transform: translate3d({parallaxX * -12}px, {parallaxY * -10}px, 0);"
   ></div>
 

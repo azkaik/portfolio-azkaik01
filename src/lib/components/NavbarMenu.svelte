@@ -120,7 +120,7 @@
             href={link.href}
             onclick={(e) => handleNavClick(e, link.href)}
             class="px-3.5 py-1.5 rounded-full text-[13px] font-semibold tracking-wide transition-all duration-200 {isActive
-              ? 'bg-[#4F46E5] text-white shadow-[0_2px_10px_rgba(79,70,229,0.45)]'
+              ? 'bg-[#0059FF] text-white shadow-[0_2px_10px_rgba(0,89,255,0.45)]'
               : 'text-slate-700 hover:text-slate-950 hover:bg-slate-900/5 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/10'}"
           >
             {link.label}
@@ -139,7 +139,7 @@
           onclick={() => preferences.setLang('id')}
           aria-pressed={preferences.lang === 'id'}
           class="px-2 sm:px-2.5 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all cursor-pointer {preferences.lang === 'id'
-            ? 'bg-[#4F46E5] text-white shadow-sm'
+            ? 'bg-[#0059FF] text-white shadow-sm'
             : 'text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white'}"
         >
           ID
@@ -149,7 +149,7 @@
           onclick={() => preferences.setLang('en')}
           aria-pressed={preferences.lang === 'en'}
           class="px-2 sm:px-2.5 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all cursor-pointer {preferences.lang === 'en'
-            ? 'bg-[#4F46E5] text-white shadow-sm'
+            ? 'bg-[#0059FF] text-white shadow-sm'
             : 'text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white'}"
         >
           EN
@@ -162,7 +162,7 @@
         onclick={preferences.toggleTheme}
         aria-label={preferences.theme === 'dark' ? t.ui.switchToLightAria : t.ui.switchToDarkAria}
         title={preferences.theme === 'dark' ? t.ui.switchToLightAria : t.ui.switchToDarkAria}
-        class="w-8 h-8 sm:w-9 sm:h-9 rounded-full inline-flex items-center justify-center border bg-white/90 dark:bg-[#090B14]/85 backdrop-blur-md border-slate-900/15 dark:border-white/20 text-[#4F46E5] dark:text-[#FACC15] hover:border-[#0EA5E9] shadow-[0_6px_18px_rgba(15,23,42,0.1)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)] transition-all cursor-pointer shrink-0"
+        class="w-8 h-8 sm:w-9 sm:h-9 rounded-full inline-flex items-center justify-center border bg-white/90 dark:bg-[#090B14]/85 backdrop-blur-md border-slate-900/15 dark:border-white/20 text-[#0059FF] dark:text-[#FACC15] hover:border-[#0EA5E9] shadow-[0_6px_18px_rgba(15,23,42,0.1)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)] transition-all cursor-pointer shrink-0"
       >
         {#if preferences.theme === 'dark'}
           <Sun size={16} strokeWidth={2.3} />
@@ -201,7 +201,7 @@
     <div class="w-full max-w-[1140px] mx-auto px-5 sm:px-10 pt-6 pb-5 border-b border-slate-200 dark:border-white/10 flex items-center justify-between gap-4">
       <div class="flex items-center gap-2.5 text-sm sm:text-base font-extrabold tracking-widest uppercase">
         <span class="text-slate-900 dark:text-white font-display text-xl sm:text-2xl tracking-wider">AZKAIK</span>
-        <span class="text-[#6366F1]" aria-hidden="true">//</span>
+        <span class="text-[#0059FF] dark:text-[#4D8CFF]" aria-hidden="true">//</span>
         <span class="text-[#0284C7] dark:text-[#0EA5E9]">NAVIGATION</span>
       </div>
 
@@ -222,7 +222,7 @@
         {@const isOpen = openGroupIndex === idx}
         <div
           class="rounded-2xl border transition-all duration-200 {isOpen
-            ? 'bg-white border-[#4F46E5]/60 shadow-[0_12px_36px_rgba(79,70,229,0.12)] dark:bg-[#101426] dark:border-[#6366F1]/75 dark:shadow-[0_12px_36px_rgba(79,70,229,0.18)]'
+            ? 'bg-white border-[#0059FF]/60 shadow-[0_12px_36px_rgba(0,89,255,0.12)] dark:bg-[#101426] dark:border-[#0059FF]/80 dark:shadow-[0_12px_36px_rgba(0,89,255,0.2)]'
             : 'bg-white/75 border-slate-200 hover:border-slate-300 dark:bg-[#0D1020] dark:border-white/12 dark:hover:border-white/28'}"
         >
           <button
@@ -247,7 +247,7 @@
 
             <span
               class="w-9 h-9 rounded-full border flex items-center justify-center shrink-0 transition-all duration-200 {isOpen
-                ? 'border-[#4F46E5] bg-[#4F46E5]/10 text-[#4F46E5] dark:border-[#6366F1] dark:bg-[#6366F1]/20 dark:text-white rotate-180'
+                ? 'border-[#0059FF] bg-[#0059FF]/10 text-[#0059FF] dark:border-[#4D8CFF] dark:bg-[#0059FF]/25 dark:text-white rotate-180'
                 : 'border-slate-300 text-slate-500 dark:border-white/20 dark:text-slate-400'}"
               aria-hidden="true"
             >
@@ -263,7 +263,7 @@
                   target={item.external ? '_blank' : undefined}
                   rel={item.external ? 'noopener noreferrer' : undefined}
                   onclick={(e) => handleNavClick(e, item.href, item.external)}
-                  class="group flex items-center justify-between gap-4 rounded-xl bg-slate-50 hover:bg-[#EEF2FF] dark:bg-[#080B16] dark:hover:bg-[#161D38] border border-slate-200 hover:border-[#4F46E5]/55 dark:border-white/10 dark:hover:border-[#0EA5E9]/65 px-4 py-3.5 transition-all duration-150"
+                  class="group flex items-center justify-between gap-4 rounded-xl bg-slate-50 hover:bg-[#EBF2FF] dark:bg-[#080B16] dark:hover:bg-[#131C38] border border-slate-200 hover:border-[#0059FF]/55 dark:border-white/10 dark:hover:border-[#0EA5E9]/65 px-4 py-3.5 transition-all duration-150"
                 >
                   <div class="flex items-start gap-3 min-w-0">
                     <span class="mt-0.5 text-[#0284C7] dark:text-[#0EA5E9] group-hover:translate-x-0.5 transition-transform shrink-0">
@@ -274,7 +274,7 @@
                       {/if}
                     </span>
                     <div class="min-w-0">
-                      <p class="text-sm sm:text-[15px] font-bold tracking-wide text-slate-900 group-hover:text-[#4F46E5] dark:text-white dark:group-hover:text-[#38BDF8] transition-colors">
+                      <p class="text-sm sm:text-[15px] font-bold tracking-wide text-slate-900 group-hover:text-[#0059FF] dark:text-white dark:group-hover:text-[#38BDF8] transition-colors">
                         {item.label}
                       </p>
                       <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400 truncate">
@@ -300,7 +300,7 @@
           href={CONTACT_INFO.instagram.url}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-[#EEF2FF] dark:bg-white/5 dark:hover:bg-[#6366F1]/25 border border-slate-200 hover:border-[#4F46E5] dark:border-white/12 dark:hover:border-[#6366F1] text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-[#EBF2FF] dark:bg-white/5 dark:hover:bg-[#0059FF]/25 border border-slate-200 hover:border-[#0059FF] dark:border-white/12 dark:hover:border-[#4D8CFF] text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors"
         >
           <InstagramIcon size={14} />
           <span>{CONTACT_INFO.instagram.handle}</span>
@@ -316,7 +316,7 @@
           href={CONTACT_INFO.whatsapp.url}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-[#EEF2FF] dark:bg-white/5 dark:hover:bg-[#6366F1]/25 border border-slate-200 hover:border-[#4F46E5] dark:border-white/12 dark:hover:border-[#6366F1] text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-[#EBF2FF] dark:bg-white/5 dark:hover:bg-[#0059FF]/25 border border-slate-200 hover:border-[#0059FF] dark:border-white/12 dark:hover:border-[#4D8CFF] text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors"
         >
           <MessageCircle size={14} />
           <span>WhatsApp</span>
