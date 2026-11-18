@@ -36,39 +36,6 @@ export const SOFTWARE = [
   'KRITA',
 ]
 
-export const LEARNING_JOURNEY = {
-  eyebrow: 'Skill & Learning',
-  title: 'Learning Journey',
-  subtitle:
-    'I am constantly learning and improving my skills in frontend development. Here are some of the technologies and frameworks I am currently learning:',
-  items: [
-    {
-      title: 'Jaz Academy',
-      description:
-        'Learning frontend development through Jaz Academy, focusing on modern web technologies and best practices.',
-      iconKey: 'code',
-    },
-    {
-      title: 'GIT Courses | Video Editing',
-      description:
-        'Learning version control and collaboration using Git, as well as enhancing my skills in video editing for creating engaging content.',
-      iconKey: 'git',
-    },
-    {
-      title: 'Udemy Courses | Web Programming',
-      description:
-        'Taking online courses on Udemy to deepen my understanding of web programming and frontend development.',
-      iconKey: 'web',
-    },
-    {
-      title: 'WPU Courses | AI Engineering',
-      description:
-        'Learning GraphQL for efficient API development and data fetching.',
-      iconKey: 'ai',
-    },
-  ],
-}
-
 export const CONTACT_INFO = {
   instagram: {
     handle: '@azkaik01',
@@ -132,7 +99,7 @@ export const CONTENT = {
           period: '2026',
           description:
             'Membimbing peserta selama persiapan ICC 2026, mulai dari perancangan konsep hingga pengembangan proyek, hingga mentee berhasil meraih Juara 3.',
-          accent: 'indigo',
+          accent: 'blue',
         },
         {
           title: 'Peneliti Muda Lapangan — Young Forest Scientist',
@@ -146,7 +113,39 @@ export const CONTENT = {
           period: '2025',
           description:
             'Merancang dan memproduksi karya animasi kreatif dengan memadukan pengembangan media digital serta teknik visual storytelling yang interaktif.',
-          accent: 'indigo',
+          accent: 'blue',
+        },
+      ],
+    },
+    learning: {
+      eyebrow: 'Keahlian & Pembelajaran',
+      title: 'Learning Journey',
+      subtitle:
+        'Saya terus belajar dan meningkatkan kemampuan di bidang pengembangan frontend. Berikut beberapa teknologi dan materi yang sedang saya pelajari saat ini:',
+      items: [
+        {
+          title: 'Jaz Academy',
+          description:
+            'Mempelajari pengembangan frontend melalui Jaz Academy dengan fokus pada teknologi web modern dan praktik terbaik.',
+          iconKey: 'code',
+        },
+        {
+          title: 'GIT Courses | Video Editing',
+          description:
+            'Mempelajari kontrol versi dan kolaborasi menggunakan Git, sekaligus meningkatkan keterampilan video editing untuk menghasilkan konten yang menarik.',
+          iconKey: 'git',
+        },
+        {
+          title: 'Udemy Courses | Web Programming',
+          description:
+            'Mengikuti kursus online di Udemy untuk memperdalam pemahaman tentang pemrograman web dan pengembangan frontend.',
+          iconKey: 'web',
+        },
+        {
+          title: 'WPU Courses | AI Engineering',
+          description:
+            'Mempelajari GraphQL untuk pengembangan API dan pengambilan data yang efisien.',
+          iconKey: 'ai',
         },
       ],
     },
@@ -212,7 +211,7 @@ export const CONTENT = {
       {
         index: '03.',
         title: 'LEARNING JOURNEY',
-        subtitle: 'Skill & Learning Frontend, Git & AI',
+        subtitle: 'Keahlian & Pembelajaran Frontend, Git & AI',
         items: [
           {
             label: 'LEARNING JOURNEY',
@@ -301,7 +300,7 @@ export const CONTENT = {
           period: '2026',
           description:
             'Mentored participants throughout ICC 2026 preparation, from concept design to project development, until the mentee won 3rd Place.',
-          accent: 'indigo',
+          accent: 'blue',
         },
         {
           title: 'Young Field Researcher — Young Forest Scientist',
@@ -315,7 +314,39 @@ export const CONTENT = {
           period: '2025',
           description:
             'Designed and produced creative animation works by combining digital media development with interactive visual storytelling techniques.',
-          accent: 'indigo',
+          accent: 'blue',
+        },
+      ],
+    },
+    learning: {
+      eyebrow: 'Skill & Learning',
+      title: 'Learning Journey',
+      subtitle:
+        'I am constantly learning and improving my skills in frontend development. Here are some of the technologies and frameworks I am currently learning:',
+      items: [
+        {
+          title: 'Jaz Academy',
+          description:
+            'Learning frontend development through Jaz Academy, focusing on modern web technologies and best practices.',
+          iconKey: 'code',
+        },
+        {
+          title: 'GIT Courses | Video Editing',
+          description:
+            'Learning version control and collaboration using Git, as well as enhancing my skills in video editing for creating engaging content.',
+          iconKey: 'git',
+        },
+        {
+          title: 'Udemy Courses | Web Programming',
+          description:
+            'Taking online courses on Udemy to deepen my understanding of web programming and frontend development.',
+          iconKey: 'web',
+        },
+        {
+          title: 'WPU Courses | AI Engineering',
+          description:
+            'Learning GraphQL for efficient API development and data fetching.',
+          iconKey: 'ai',
         },
       ],
     },

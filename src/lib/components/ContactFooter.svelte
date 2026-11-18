@@ -55,7 +55,7 @@
 
 <section
   id="contact"
-  class="scroll-mt-16 relative bg-white text-slate-900 dark:bg-[#070B14] dark:text-slate-100 pt-20 pb-12 px-6 sm:px-10 lg:px-16 border-t border-slate-200/80 dark:border-white/8 overflow-hidden transition-colors duration-300"
+  class="scroll-mt-16 relative bg-[#BDBDBD] text-[#0A0A0A] dark:bg-[#070B14] dark:text-slate-100 pt-20 pb-12 px-6 sm:px-10 lg:px-16 border-t border-black/12 dark:border-white/8 overflow-hidden transition-colors duration-300"
 >
   <!-- Subtle ambient cobalt-cyan glow -->
   <div
@@ -67,16 +67,16 @@
     <!-- Section Heading -->
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
       <div>
-        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#0059FF] dark:text-[#4D8CFF] mb-3">
-          <span class="w-6 h-[2px] bg-[#0EA5E9]"></span>
+        <div class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#0040B8] dark:text-[#4D8CFF] mb-3">
+          <span class="w-6 h-[2px] bg-[#0059FF] dark:bg-[#0EA5E9]"></span>
           <span>{t.contact.eyebrow}</span>
         </div>
-        <h2 class="font-display text-4xl sm:text-5xl tracking-wide text-slate-900 dark:text-white uppercase">
+        <h2 class="font-display text-4xl sm:text-5xl tracking-wide text-[#0A0A0A] dark:text-white uppercase">
           {t.contact.title}
         </h2>
       </div>
 
-      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-md">
+      <p class="text-sm sm:text-base text-[#262626] dark:text-slate-400 max-w-md">
         {t.contact.subtitle}
       </p>
     </div>
@@ -88,34 +88,34 @@
         href={CONTACT_INFO.instagram.url}
         target="_blank"
         rel="noopener noreferrer"
-        class="group rounded-2xl bg-slate-50 hover:bg-[#EBF2FF]/70 dark:bg-[#101626] dark:hover:bg-[#141D33] border border-slate-200 hover:border-[#0059FF]/55 dark:border-white/10 dark:hover:border-[#0059FF]/65 p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none"
+        class="group rounded-2xl bg-[#D8D8D8] hover:bg-[#E4E4E4] dark:bg-[#101626] dark:hover:bg-[#141D33] border border-black/15 hover:border-[#0059FF]/60 dark:border-white/10 dark:hover:border-[#0059FF]/65 p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none"
       >
         <div class="flex items-center justify-between">
-          <div class="w-10 h-10 rounded-xl bg-[#0059FF]/10 dark:bg-[#0059FF]/18 border border-[#0059FF]/25 dark:border-[#4D8CFF]/35 flex items-center justify-center text-[#0059FF] dark:text-[#4D8CFF]">
+          <div class="w-10 h-10 rounded-xl bg-[#C7C7C7] dark:bg-[#0059FF]/18 border border-black/15 dark:border-[#4D8CFF]/35 flex items-center justify-center text-[#0040B8] dark:text-[#4D8CFF]">
             <InstagramIcon size={20} />
           </div>
-          <ArrowUpRight size={18} class="text-slate-400 dark:text-slate-500 group-hover:text-slate-900 dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+          <ArrowUpRight size={18} class="text-[#404040] dark:text-slate-500 group-hover:text-[#0A0A0A] dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
         </div>
         <div>
-          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+          <p class="text-xs font-semibold uppercase tracking-wider text-[#333333] dark:text-slate-400">
             Instagram
           </p>
-          <p class="mt-1 text-base font-bold text-slate-900 dark:text-white group-hover:text-[#0059FF] dark:group-hover:text-[#80ADFF] transition-colors">
+          <p class="mt-1 text-base font-bold text-[#0A0A0A] dark:text-white group-hover:text-[#0040B8] dark:group-hover:text-[#80ADFF] transition-colors">
             {CONTACT_INFO.instagram.handle}
           </p>
         </div>
       </a>
 
       <!-- Email with Copy Action -->
-      <div class="group rounded-2xl bg-slate-50 hover:bg-sky-50/70 dark:bg-[#101626] dark:hover:bg-[#141D33] border border-slate-200 hover:border-[#0EA5E9]/60 dark:border-white/10 dark:hover:border-[#0EA5E9]/60 p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none">
+      <div class="group rounded-2xl bg-[#D8D8D8] hover:bg-[#E4E4E4] dark:bg-[#101626] dark:hover:bg-[#141D33] border border-black/15 hover:border-[#0284C7]/70 dark:border-white/10 dark:hover:border-[#0EA5E9]/60 p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none">
         <div class="flex items-center justify-between gap-2">
-          <div class="w-10 h-10 rounded-xl bg-[#0EA5E9]/12 dark:bg-[#0EA5E9]/15 border border-[#0EA5E9]/30 dark:border-[#0EA5E9]/35 flex items-center justify-center text-[#0284C7] dark:text-[#38BDF8]">
+          <div class="w-10 h-10 rounded-xl bg-[#C7C7C7] dark:bg-[#0EA5E9]/15 border border-black/15 dark:border-[#0EA5E9]/35 flex items-center justify-center text-[#004C73] dark:text-[#38BDF8]">
             <Mail size={20} />
           </div>
           <button
             type="button"
             onclick={copyEmail}
-            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#0059FF]/10 hover:bg-[#0059FF] text-[#0059FF] hover:text-white border border-[#0059FF]/30 dark:bg-[#0059FF]/22 dark:hover:bg-[#0059FF] dark:text-[#99BCFF] dark:hover:text-white dark:border-[#4D8CFF]/40 transition-colors cursor-pointer"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#C7C7C7] hover:bg-[#0059FF] text-[#0A0A0A] hover:text-white border border-black/20 hover:border-[#0059FF] dark:bg-[#0059FF]/22 dark:hover:bg-[#0059FF] dark:text-[#99BCFF] dark:hover:text-white dark:border-[#4D8CFF]/40 transition-colors cursor-pointer"
             aria-label={t.contact.copyAria}
           >
             {#if copied}
@@ -128,12 +128,12 @@
           </button>
         </div>
         <div class="min-w-0">
-          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+          <p class="text-xs font-semibold uppercase tracking-wider text-[#333333] dark:text-slate-400">
             Email
           </p>
           <a
             href={CONTACT_INFO.email.mailto}
-            class="mt-1 block text-base font-bold text-slate-900 hover:text-[#0284C7] dark:text-white dark:hover:text-[#38BDF8] transition-colors truncate"
+            class="mt-1 block text-base font-bold text-[#0A0A0A] hover:text-[#0040B8] dark:text-white dark:hover:text-[#38BDF8] transition-colors truncate"
             title={CONTACT_INFO.email.address}
           >
             {CONTACT_INFO.email.address}
@@ -146,34 +146,34 @@
         href={CONTACT_INFO.whatsapp.url}
         target="_blank"
         rel="noopener noreferrer"
-        class="group rounded-2xl bg-slate-50 hover:bg-[#EBF2FF]/70 dark:bg-[#101626] dark:hover:bg-[#141D33] border border-slate-200 hover:border-[#0059FF]/55 dark:border-white/10 dark:hover:border-[#0059FF]/65 p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none"
+        class="group rounded-2xl bg-[#D8D8D8] hover:bg-[#E4E4E4] dark:bg-[#101626] dark:hover:bg-[#141D33] border border-black/15 hover:border-[#0059FF]/60 dark:border-white/10 dark:hover:border-[#0059FF]/65 p-5 sm:p-6 transition-all duration-200 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none"
       >
         <div class="flex items-center justify-between">
-          <div class="w-10 h-10 rounded-xl bg-[#0059FF]/10 dark:bg-[#0059FF]/18 border border-[#0059FF]/25 dark:border-[#4D8CFF]/35 flex items-center justify-center text-[#0059FF] dark:text-[#4D8CFF]">
+          <div class="w-10 h-10 rounded-xl bg-[#C7C7C7] dark:bg-[#0059FF]/18 border border-black/15 dark:border-[#4D8CFF]/35 flex items-center justify-center text-[#0040B8] dark:text-[#4D8CFF]">
             <Phone size={20} />
           </div>
-          <ArrowUpRight size={18} class="text-slate-400 dark:text-slate-500 group-hover:text-slate-900 dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+          <ArrowUpRight size={18} class="text-[#404040] dark:text-slate-500 group-hover:text-[#0A0A0A] dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
         </div>
         <div>
-          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+          <p class="text-xs font-semibold uppercase tracking-wider text-[#333333] dark:text-slate-400">
             {t.contact.whatsappLabel}
           </p>
-          <p class="mt-1 text-base font-bold text-slate-900 dark:text-white group-hover:text-[#0059FF] dark:group-hover:text-[#80ADFF] transition-colors">
+          <p class="mt-1 text-base font-bold text-[#0A0A0A] dark:text-white group-hover:text-[#0040B8] dark:group-hover:text-[#80ADFF] transition-colors">
             {CONTACT_INFO.whatsapp.display}
           </p>
         </div>
       </a>
 
       <!-- Lokasi -->
-      <div class="rounded-2xl bg-slate-50 dark:bg-[#101626] border border-slate-200 dark:border-white/10 p-5 sm:p-6 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none">
-        <div class="w-10 h-10 rounded-xl bg-[#0EA5E9]/12 dark:bg-[#0EA5E9]/15 border border-[#0EA5E9]/30 dark:border-[#0EA5E9]/35 flex items-center justify-center text-[#0284C7] dark:text-[#38BDF8]">
+      <div class="rounded-2xl bg-[#D8D8D8] dark:bg-[#101626] border border-black/15 dark:border-white/10 p-5 sm:p-6 flex flex-col justify-between gap-4 shadow-sm dark:shadow-none">
+        <div class="w-10 h-10 rounded-xl bg-[#C7C7C7] dark:bg-[#0EA5E9]/15 border border-black/15 dark:border-[#0EA5E9]/35 flex items-center justify-center text-[#004C73] dark:text-[#38BDF8]">
           <MapPin size={20} />
         </div>
         <div>
-          <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+          <p class="text-xs font-semibold uppercase tracking-wider text-[#333333] dark:text-slate-400">
             {t.contact.locationLabel}
           </p>
-          <p class="mt-1 text-base font-bold text-slate-900 dark:text-white">
+          <p class="mt-1 text-base font-bold text-[#0A0A0A] dark:text-white">
             {CONTACT_INFO.location}
           </p>
         </div>
@@ -181,16 +181,16 @@
     </div>
 
     <!-- Footer Bar -->
-    <footer class="mt-16 pt-8 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+    <footer class="mt-16 pt-8 border-t border-black/15 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[#262626] dark:text-slate-400">
       <div class="flex items-center gap-3">
-        <span class="font-display text-lg tracking-wider text-slate-900 dark:text-white">AZKAIK</span>
-        <span class="text-slate-300 dark:text-white/25" aria-hidden="true">|</span>
+        <span class="font-display text-lg tracking-wider text-[#0A0A0A] dark:text-white">AZKAIK</span>
+        <span class="text-black/30 dark:text-white/25" aria-hidden="true">|</span>
         <span>Ikhwanul Azka &copy; {new Date().getFullYear()}</span>
       </div>
 
       <a
         href="#top"
-        class="inline-flex items-center gap-1.5 text-slate-600 hover:text-[#0059FF] dark:text-slate-300 dark:hover:text-[#38BDF8] transition-colors font-medium"
+        class="inline-flex items-center gap-1.5 text-[#141414] hover:text-[#0040B8] dark:text-slate-300 dark:hover:text-[#38BDF8] transition-colors font-medium"
       >
         <span>{t.contact.backToTop}</span>
         <ArrowUp size={15} />
@@ -203,12 +203,12 @@
     <div
       role="status"
       aria-live="polite"
-      class="fixed top-24 right-6 z-50 animate-toast-in flex items-center gap-3 px-4 py-3 rounded-xl bg-white/95 dark:bg-[#111827]/95 backdrop-blur-md border border-[#0059FF]/40 dark:border-[#4D8CFF]/60 shadow-[0_12px_32px_rgba(15,23,42,0.18)] dark:shadow-[0_12px_32px_rgba(0,0,0,0.5)] text-sm font-medium text-slate-900 dark:text-white"
+      class="fixed top-24 right-6 z-50 animate-toast-in flex items-center gap-3 px-4 py-3 rounded-xl bg-[#E5E5E5]/95 dark:bg-[#111827]/95 backdrop-blur-md border border-black/20 dark:border-[#4D8CFF]/60 shadow-[0_12px_32px_rgba(0,0,0,0.2)] dark:shadow-[0_12px_32px_rgba(0,0,0,0.5)] text-sm font-medium text-[#0A0A0A] dark:text-white"
     >
-      <span class="w-6 h-6 rounded-full bg-[#0EA5E9]/15 dark:bg-[#0EA5E9]/20 text-[#0284C7] dark:text-[#38BDF8] flex items-center justify-center shrink-0">
+      <span class="w-6 h-6 rounded-full bg-[#0059FF]/15 dark:bg-[#0EA5E9]/20 text-[#0040B8] dark:text-[#38BDF8] flex items-center justify-center shrink-0">
         <Check size={14} />
       </span>
-      <span>{t.contact.toastPrefix} <strong class="text-[#0059FF] dark:text-[#80ADFF]">{CONTACT_INFO.email.address}</strong> {t.contact.toastSuffix}</span>
+      <span>{t.contact.toastPrefix} <strong class="text-[#0040B8] dark:text-[#80ADFF]">{CONTACT_INFO.email.address}</strong> {t.contact.toastSuffix}</span>
     </div>
   {/if}
 </section>

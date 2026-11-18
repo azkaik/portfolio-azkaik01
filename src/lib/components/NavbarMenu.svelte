@@ -96,9 +96,9 @@
     <a
       href="#top"
       onclick={(e) => handleNavClick(e, '#top')}
-      class="pointer-events-auto inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border transition-all duration-200 bg-white/90 dark:bg-[#090B14]/85 backdrop-blur-md border-slate-900/15 dark:border-white/20 text-slate-900 dark:text-white hover:border-[#0EA5E9] {isScrolled
-        ? 'shadow-[0_8px_24px_rgba(15,23,42,0.14)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.45)]'
-        : 'shadow-[0_6px_18px_rgba(15,23,42,0.1)] dark:shadow-[0_6px_18px_rgba(10,10,28,0.28)]'}"
+      class="pointer-events-auto inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border transition-all duration-200 bg-[#E2E2E2]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/15 dark:border-white/20 text-[#0A0A0A] dark:text-white hover:border-[#0EA5E9] {isScrolled
+        ? 'shadow-[0_8px_24px_rgba(0,0,0,0.16)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.45)]'
+        : 'shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_6px_18px_rgba(10,10,28,0.28)]'}"
       aria-label={t.ui.homeAria}
     >
       <span class="w-2 h-2 rounded-full bg-[#0EA5E9] shadow-[0_0_8px_#0EA5E9]" aria-hidden="true"></span>
@@ -111,7 +111,7 @@
     <div class="pointer-events-auto flex items-center gap-1.5 sm:gap-2.5">
       <!-- Desktop Quick Anchor Pills -->
       <nav
-        class="hidden lg:inline-flex items-center gap-1 p-1.5 rounded-full border transition-all duration-200 bg-white/88 dark:bg-[#090B14]/80 backdrop-blur-md border-slate-900/15 dark:border-white/20 shadow-[0_6px_18px_rgba(15,23,42,0.1)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.4)]"
+        class="hidden lg:inline-flex items-center gap-1 p-1.5 rounded-full border transition-all duration-200 bg-[#E2E2E2]/90 dark:bg-[#090B14]/80 backdrop-blur-md border-black/15 dark:border-white/20 shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.4)]"
         aria-label="Navigasi utama"
       >
         {#each t.navLinks as link}
@@ -121,7 +121,7 @@
             onclick={(e) => handleNavClick(e, link.href)}
             class="px-3.5 py-1.5 rounded-full text-[13px] font-semibold tracking-wide transition-all duration-200 {isActive
               ? 'bg-[#0059FF] text-white shadow-[0_2px_10px_rgba(0,89,255,0.45)]'
-              : 'text-slate-700 hover:text-slate-950 hover:bg-slate-900/5 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/10'}"
+              : 'text-[#1A1A1A] hover:text-black hover:bg-black/8 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/10'}"
           >
             {link.label}
           </a>
@@ -130,7 +130,7 @@
 
       <!-- Language Switcher Pill (ID | EN) -->
       <div
-        class="inline-flex items-center p-0.5 sm:p-1 rounded-full border bg-white/90 dark:bg-[#090B14]/85 backdrop-blur-md border-slate-900/15 dark:border-white/20 shadow-[0_6px_18px_rgba(15,23,42,0.1)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)]"
+        class="inline-flex items-center p-0.5 sm:p-1 rounded-full border bg-[#E2E2E2]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/15 dark:border-white/20 shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)]"
         role="group"
         aria-label="Language switcher"
       >
@@ -140,7 +140,7 @@
           aria-pressed={preferences.lang === 'id'}
           class="px-2 sm:px-2.5 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all cursor-pointer {preferences.lang === 'id'
             ? 'bg-[#0059FF] text-white shadow-sm'
-            : 'text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white'}"
+            : 'text-[#262626] hover:text-black dark:text-slate-300 dark:hover:text-white'}"
         >
           ID
         </button>
@@ -150,7 +150,7 @@
           aria-pressed={preferences.lang === 'en'}
           class="px-2 sm:px-2.5 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all cursor-pointer {preferences.lang === 'en'
             ? 'bg-[#0059FF] text-white shadow-sm'
-            : 'text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white'}"
+            : 'text-[#262626] hover:text-black dark:text-slate-300 dark:hover:text-white'}"
         >
           EN
         </button>
@@ -162,7 +162,7 @@
         onclick={preferences.toggleTheme}
         aria-label={preferences.theme === 'dark' ? t.ui.switchToLightAria : t.ui.switchToDarkAria}
         title={preferences.theme === 'dark' ? t.ui.switchToLightAria : t.ui.switchToDarkAria}
-        class="w-8 h-8 sm:w-9 sm:h-9 rounded-full inline-flex items-center justify-center border bg-white/90 dark:bg-[#090B14]/85 backdrop-blur-md border-slate-900/15 dark:border-white/20 text-[#0059FF] dark:text-[#FACC15] hover:border-[#0EA5E9] shadow-[0_6px_18px_rgba(15,23,42,0.1)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)] transition-all cursor-pointer shrink-0"
+        class="w-8 h-8 sm:w-9 sm:h-9 rounded-full inline-flex items-center justify-center border bg-[#E2E2E2]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/15 dark:border-white/20 text-[#0040B8] dark:text-[#FACC15] hover:border-[#0EA5E9] shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)] transition-all cursor-pointer shrink-0"
       >
         {#if preferences.theme === 'dark'}
           <Sun size={16} strokeWidth={2.3} />
@@ -195,20 +195,20 @@
     aria-modal="true"
     aria-label={t.ui.openMenuAria}
     transition:fade={{ duration: 180 }}
-    class="fixed inset-0 z-50 bg-[#F8FAFC]/[0.98] dark:bg-[#080A14]/[0.98] backdrop-blur-xl text-slate-900 dark:text-white overflow-y-auto flex flex-col justify-between transition-colors duration-200"
+    class="fixed inset-0 z-50 bg-[#BDBDBD]/[0.98] dark:bg-[#080A14]/[0.98] backdrop-blur-xl text-[#0A0A0A] dark:text-white overflow-y-auto flex flex-col justify-between transition-colors duration-200"
   >
     <!-- Top Bar inside Overlay -->
-    <div class="w-full max-w-[1140px] mx-auto px-5 sm:px-10 pt-6 pb-5 border-b border-slate-200 dark:border-white/10 flex items-center justify-between gap-4">
+    <div class="w-full max-w-[1140px] mx-auto px-5 sm:px-10 pt-6 pb-5 border-b border-black/15 dark:border-white/10 flex items-center justify-between gap-4">
       <div class="flex items-center gap-2.5 text-sm sm:text-base font-extrabold tracking-widest uppercase">
-        <span class="text-slate-900 dark:text-white font-display text-xl sm:text-2xl tracking-wider">AZKAIK</span>
-        <span class="text-[#0059FF] dark:text-[#4D8CFF]" aria-hidden="true">//</span>
-        <span class="text-[#0284C7] dark:text-[#0EA5E9]">NAVIGATION</span>
+        <span class="text-[#0A0A0A] dark:text-white font-display text-xl sm:text-2xl tracking-wider">AZKAIK</span>
+        <span class="text-[#0040B8] dark:text-[#4D8CFF]" aria-hidden="true">//</span>
+        <span class="text-[#003BB5] dark:text-[#0EA5E9]">NAVIGATION</span>
       </div>
 
       <button
         type="button"
         onclick={closeMenu}
-        class="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-white hover:bg-slate-100 dark:bg-[#13172B] dark:hover:bg-[#1B2240] text-slate-900 dark:text-white border border-slate-300 dark:border-white/25 hover:border-[#0EA5E9] text-xs font-extrabold tracking-wider uppercase whitespace-nowrap shrink-0 cursor-pointer transition-colors"
+        class="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-[#DEDEDE] hover:bg-[#EBEBEB] dark:bg-[#13172B] dark:hover:bg-[#1B2240] text-[#0A0A0A] dark:text-white border border-black/20 dark:border-white/25 hover:border-[#0040B8] dark:hover:border-[#0EA5E9] text-xs font-extrabold tracking-wider uppercase whitespace-nowrap shrink-0 cursor-pointer transition-colors"
         aria-label={t.ui.closeMenuAria}
       >
         <span>{t.ui.closeLabel}</span>
@@ -222,8 +222,8 @@
         {@const isOpen = openGroupIndex === idx}
         <div
           class="rounded-2xl border transition-all duration-200 {isOpen
-            ? 'bg-white border-[#0059FF]/60 shadow-[0_12px_36px_rgba(0,89,255,0.12)] dark:bg-[#101426] dark:border-[#0059FF]/80 dark:shadow-[0_12px_36px_rgba(0,89,255,0.2)]'
-            : 'bg-white/75 border-slate-200 hover:border-slate-300 dark:bg-[#0D1020] dark:border-white/12 dark:hover:border-white/28'}"
+            ? 'bg-[#DEDEDE] border-[#0059FF]/70 shadow-[0_12px_36px_rgba(0,0,0,0.12)] dark:bg-[#101426] dark:border-[#0059FF]/80 dark:shadow-[0_12px_36px_rgba(0,89,255,0.2)]'
+            : 'bg-[#CFCFCF] border-black/15 hover:border-black/30 dark:bg-[#0D1020] dark:border-white/12 dark:hover:border-white/28'}"
         >
           <button
             type="button"
@@ -232,14 +232,14 @@
             aria-expanded={isOpen}
           >
             <div class="flex items-start gap-3.5 sm:gap-4 min-w-0">
-              <span class="text-xs sm:text-sm font-bold tracking-wider text-[#0284C7] dark:text-[#0EA5E9] pt-1 shrink-0 font-mono">
+              <span class="text-xs sm:text-sm font-bold tracking-wider text-[#0040B8] dark:text-[#0EA5E9] pt-1 shrink-0 font-mono">
                 {group.index}
               </span>
               <div class="min-w-0">
-                <span class="block font-display text-2xl sm:text-3xl tracking-wide text-slate-900 dark:text-white leading-none">
+                <span class="block font-display text-2xl sm:text-3xl tracking-wide text-[#0A0A0A] dark:text-white leading-none">
                   {group.title}
                 </span>
-                <span class="block mt-1.5 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                <span class="block mt-1.5 text-xs sm:text-sm text-[#333333] dark:text-slate-400">
                   {group.subtitle}
                 </span>
               </div>
@@ -247,8 +247,8 @@
 
             <span
               class="w-9 h-9 rounded-full border flex items-center justify-center shrink-0 transition-all duration-200 {isOpen
-                ? 'border-[#0059FF] bg-[#0059FF]/10 text-[#0059FF] dark:border-[#4D8CFF] dark:bg-[#0059FF]/25 dark:text-white rotate-180'
-                : 'border-slate-300 text-slate-500 dark:border-white/20 dark:text-slate-400'}"
+                ? 'border-[#0059FF] bg-[#0059FF] text-white dark:border-[#4D8CFF] dark:bg-[#0059FF]/25 dark:text-white rotate-180'
+                : 'border-black/25 text-[#262626] dark:border-white/20 dark:text-slate-400'}"
               aria-hidden="true"
             >
               <ChevronDown size={18} />
@@ -263,10 +263,10 @@
                   target={item.external ? '_blank' : undefined}
                   rel={item.external ? 'noopener noreferrer' : undefined}
                   onclick={(e) => handleNavClick(e, item.href, item.external)}
-                  class="group flex items-center justify-between gap-4 rounded-xl bg-slate-50 hover:bg-[#EBF2FF] dark:bg-[#080B16] dark:hover:bg-[#131C38] border border-slate-200 hover:border-[#0059FF]/55 dark:border-white/10 dark:hover:border-[#0EA5E9]/65 px-4 py-3.5 transition-all duration-150"
+                  class="group flex items-center justify-between gap-4 rounded-xl bg-[#CCCCCC] hover:bg-[#DCE7FF] dark:bg-[#080B16] dark:hover:bg-[#131C38] border border-black/12 hover:border-[#0059FF]/60 dark:border-white/10 dark:hover:border-[#0EA5E9]/65 px-4 py-3.5 transition-all duration-150"
                 >
                   <div class="flex items-start gap-3 min-w-0">
-                    <span class="mt-0.5 text-[#0284C7] dark:text-[#0EA5E9] group-hover:translate-x-0.5 transition-transform shrink-0">
+                    <span class="mt-0.5 text-[#0040B8] dark:text-[#0EA5E9] group-hover:translate-x-0.5 transition-transform shrink-0">
                       {#if item.external}
                         <ArrowUpRight size={17} />
                       {:else}
@@ -274,10 +274,10 @@
                       {/if}
                     </span>
                     <div class="min-w-0">
-                      <p class="text-sm sm:text-[15px] font-bold tracking-wide text-slate-900 group-hover:text-[#0059FF] dark:text-white dark:group-hover:text-[#38BDF8] transition-colors">
+                      <p class="text-sm sm:text-[15px] font-bold tracking-wide text-[#0A0A0A] group-hover:text-[#0040B8] dark:text-white dark:group-hover:text-[#38BDF8] transition-colors">
                         {item.label}
                       </p>
-                      <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400 truncate">
+                      <p class="mt-0.5 text-xs text-[#262626] dark:text-slate-400 truncate">
                         {item.description}
                       </p>
                     </div>
@@ -291,23 +291,23 @@
     </nav>
 
     <!-- Bottom Social, CV & Location Bar inside Overlay -->
-    <div class="w-full max-w-[1140px] mx-auto px-5 sm:px-10 py-6 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <div class="w-full max-w-[1140px] mx-auto px-5 sm:px-10 py-6 border-t border-black/15 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div class="flex flex-wrap items-center gap-2.5">
-        <span class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mr-1">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#262626] dark:text-slate-400 mr-1">
           {t.ui.findMe}
         </span>
         <a
           href={CONTACT_INFO.instagram.url}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-[#EBF2FF] dark:bg-white/5 dark:hover:bg-[#0059FF]/25 border border-slate-200 hover:border-[#0059FF] dark:border-white/12 dark:hover:border-[#4D8CFF] text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#D8D8D8] hover:bg-[#E8E8E8] dark:bg-white/5 dark:hover:bg-[#0059FF]/25 border border-black/15 hover:border-[#0040B8] dark:border-white/12 dark:hover:border-[#4D8CFF] text-xs font-medium text-[#0A0A0A] dark:text-slate-200 transition-colors"
         >
           <InstagramIcon size={14} />
           <span>{CONTACT_INFO.instagram.handle}</span>
         </a>
         <a
           href={CONTACT_INFO.email.mailto}
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-sky-50 dark:bg-white/5 dark:hover:bg-[#0EA5E9]/20 border border-slate-200 hover:border-[#0EA5E9] dark:border-white/12 dark:hover:border-[#0EA5E9] text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#D8D8D8] hover:bg-[#E8E8E8] dark:bg-white/5 dark:hover:bg-[#0EA5E9]/20 border border-black/15 hover:border-[#0040B8] dark:border-white/12 dark:hover:border-[#0EA5E9] text-xs font-medium text-[#0A0A0A] dark:text-slate-200 transition-colors"
         >
           <Mail size={14} />
           <span>{CONTACT_INFO.email.address}</span>
@@ -316,7 +316,7 @@
           href={CONTACT_INFO.whatsapp.url}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-[#EBF2FF] dark:bg-white/5 dark:hover:bg-[#0059FF]/25 border border-slate-200 hover:border-[#0059FF] dark:border-white/12 dark:hover:border-[#4D8CFF] text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#D8D8D8] hover:bg-[#E8E8E8] dark:bg-white/5 dark:hover:bg-[#0059FF]/25 border border-black/15 hover:border-[#0040B8] dark:border-white/12 dark:hover:border-[#4D8CFF] text-xs font-medium text-[#0A0A0A] dark:text-slate-200 transition-colors"
         >
           <MessageCircle size={14} />
           <span>WhatsApp</span>
@@ -333,8 +333,8 @@
           <span>{t.ui.downloadCvPdf}</span>
         </a>
 
-        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
-          <MapPin size={14} class="text-[#0284C7] dark:text-[#0EA5E9]" />
+        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-[#262626] dark:text-slate-400">
+          <MapPin size={14} class="text-[#0040B8] dark:text-[#0EA5E9]" />
           <span>{CONTACT_INFO.location}</span>
         </div>
       </div>
