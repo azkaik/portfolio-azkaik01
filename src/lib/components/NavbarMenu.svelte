@@ -14,6 +14,7 @@
   import { CONTENT, CONTACT_INFO, CV_INFO } from '../data/portfolio.js';
   import { preferences } from '../stores/preferences.svelte.js';
   import InstagramIcon from './InstagramIcon.svelte';
+  import AzkaikLogo from './AzkaikLogo.svelte';
 
   let menuOpen = $state(false);
   let openGroupIndex = $state(0);
@@ -92,16 +93,16 @@
 <!-- Floating Pill Header -->
 <header class="fixed top-0 left-0 right-0 z-40 pointer-events-none">
   <div class="w-full max-w-[1380px] mx-auto px-4 sm:px-10 lg:px-16 pt-4 sm:pt-6 flex items-center justify-between gap-2 sm:gap-3">
-    <!-- Left Brand Pill -->
+    <!-- Left Home Button with Custom A★ Logo -->
     <a
       href="#top"
       onclick={(e) => handleNavClick(e, '#top')}
-      class="pointer-events-auto inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border transition-all duration-200 bg-[#BDBDBD]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/20 dark:border-white/20 text-[#0A0A0A] dark:text-white hover:border-[#0EA5E9] {isScrolled
+      class="pointer-events-auto group inline-flex items-center gap-2 sm:gap-2.5 pl-1.5 pr-3 sm:pl-2 sm:pr-4 py-1 sm:py-1.5 rounded-full border transition-all duration-200 bg-[#BDBDBD]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/20 dark:border-white/20 text-[#0A0A0A] dark:text-white hover:border-[#0EA5E9] {isScrolled
         ? 'shadow-[0_8px_24px_rgba(0,0,0,0.16)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.45)]'
         : 'shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_6px_18px_rgba(10,10,28,0.28)]'}"
       aria-label={t.ui.homeAria}
     >
-      <span class="w-2 h-2 rounded-full bg-[#0EA5E9] shadow-[0_0_8px_#0EA5E9]" aria-hidden="true"></span>
+      <AzkaikLogo size={26} className="shrink-0 transition-transform duration-200 group-hover:scale-105" />
       <span class="font-display text-base sm:text-lg tracking-wider leading-none">
         AZKAIK
       </span>
@@ -200,6 +201,7 @@
     <!-- Top Bar inside Overlay -->
     <div class="w-full max-w-[1140px] mx-auto px-5 sm:px-10 pt-6 pb-5 border-b border-black/15 dark:border-white/10 flex items-center justify-between gap-4">
       <div class="flex items-center gap-2.5 text-sm sm:text-base font-extrabold tracking-widest uppercase">
+        <AzkaikLogo size={28} className="shrink-0" />
         <span class="text-[#0A0A0A] dark:text-white font-display text-xl sm:text-2xl tracking-wider">AZKAIK</span>
         <span class="text-[#0040B8] dark:text-[#4D8CFF]" aria-hidden="true">//</span>
         <span class="text-[#003BB5] dark:text-[#0EA5E9]">NAVIGATION</span>

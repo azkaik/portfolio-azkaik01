@@ -9,6 +9,7 @@
   import { CONTENT, CONTACT_INFO } from '../data/portfolio.js';
   import { preferences } from '../stores/preferences.svelte.js';
   import InstagramIcon from './InstagramIcon.svelte';
+  import AzkaikLogo from './AzkaikLogo.svelte';
 
   let copied = $state(false);
   let showToast = $state(false);
@@ -183,6 +184,7 @@
     <!-- Footer Bar -->
     <footer class="mt-16 pt-8 border-t border-black/15 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[#262626] dark:text-slate-400">
       <div class="flex items-center gap-3">
+        <AzkaikLogo size={24} className="shrink-0" />
         <span class="font-display text-lg tracking-wider text-[#0A0A0A] dark:text-white">AZKAIK</span>
         <span class="text-black/30 dark:text-white/25" aria-hidden="true">|</span>
         <span>Ikhwanul Azka &copy; {new Date().getFullYear()}</span>
