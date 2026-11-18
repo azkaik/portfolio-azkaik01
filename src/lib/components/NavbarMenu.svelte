@@ -18,7 +18,6 @@
 
   let menuOpen = $state(false);
   let openGroupIndex = $state(0);
-  let isScrolled = $state(false);
   let activeHref = $state('#top');
 
   const t = $derived(CONTENT[preferences.lang]);
@@ -60,7 +59,6 @@
   }
 
   function handleScroll() {
-    isScrolled = window.scrollY > 36;
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 40) {
       activeHref = '#contact';
       return;
@@ -93,19 +91,14 @@
 <!-- Floating Pill Header -->
 <header class="fixed top-0 left-0 right-0 z-40 pointer-events-none">
   <div class="w-full max-w-[1380px] mx-auto px-4 sm:px-10 lg:px-16 pt-4 sm:pt-6 flex items-center justify-between gap-2 sm:gap-3">
-    <!-- Left Home Button with Custom A★ Logo -->
+    <!-- Left Icon-Only Home Button with Custom A★ Logo -->
     <a
       href="#top"
       onclick={(e) => handleNavClick(e, '#top')}
-      class="pointer-events-auto group inline-flex items-center gap-2 sm:gap-2.5 pl-1.5 pr-3 sm:pl-2 sm:pr-4 py-1 sm:py-1.5 rounded-full border transition-all duration-200 bg-[#BDBDBD]/90 dark:bg-[#090B14]/85 backdrop-blur-md border-black/20 dark:border-white/20 text-[#0A0A0A] dark:text-white hover:border-[#0EA5E9] {isScrolled
-        ? 'shadow-[0_8px_24px_rgba(0,0,0,0.16)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.45)]'
-        : 'shadow-[0_6px_18px_rgba(0,0,0,0.12)] dark:shadow-[0_6px_18px_rgba(10,10,28,0.28)]'}"
+      class="pointer-events-auto group inline-flex items-center justify-center rounded-xl transition-transform duration-200 hover:scale-105 active:scale-95 drop-shadow-[0_6px_16px_rgba(0,0,0,0.3)]"
       aria-label={t.ui.homeAria}
     >
-      <AzkaikLogo size={26} className="shrink-0 transition-transform duration-200 group-hover:scale-105" />
-      <span class="font-display text-base sm:text-lg tracking-wider leading-none">
-        AZKAIK
-      </span>
+      <AzkaikLogo size={40} className="w-9 h-9 sm:w-[42px] sm:h-[42px] shrink-0" />
     </a>
 
     <!-- Right Pill Controls -->
