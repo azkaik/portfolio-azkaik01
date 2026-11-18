@@ -6,12 +6,14 @@
   import Trees from 'lucide-svelte/icons/trees';
   import Clapperboard from 'lucide-svelte/icons/clapperboard';
   import Briefcase from 'lucide-svelte/icons/briefcase';
+  import Download from 'lucide-svelte/icons/download';
   import {
     ABOUT_TEXT,
     EXPERIENCES,
     EDUCATION,
     SKILLS,
     SOFTWARE,
+    CV_INFO,
   } from '../data/portfolio.js';
 </script>
 
@@ -43,6 +45,16 @@
         <p class="mt-2 text-sm text-slate-400">
           Ikhwanul Azka <span class="text-[#0EA5E9] font-medium">(Azkaik)</span>
         </p>
+        <div class="mt-5">
+          <a
+            href={CV_INFO.href}
+            download={CV_INFO.downloadName}
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6366F1]/15 hover:bg-[#6366F1] border border-[#6366F1]/45 text-xs font-semibold tracking-wide text-[#C7D2FE] hover:text-white transition-all duration-200"
+          >
+            <Download size={14} />
+            <span>{CV_INFO.label} (PDF)</span>
+          </a>
+        </div>
       </div>
 
       <div class="lg:col-span-8">

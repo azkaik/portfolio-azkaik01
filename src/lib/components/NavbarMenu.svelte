@@ -8,7 +8,8 @@
   import Mail from 'lucide-svelte/icons/mail';
   import MessageCircle from 'lucide-svelte/icons/message-circle';
   import MapPin from 'lucide-svelte/icons/map-pin';
-  import { HERO_DATA, MENU_GROUPS, CONTACT_INFO } from '../data/portfolio.js';
+  import Download from 'lucide-svelte/icons/download';
+  import { HERO_DATA, MENU_GROUPS, CONTACT_INFO, CV_INFO } from '../data/portfolio.js';
   import InstagramIcon from './InstagramIcon.svelte';
 
   let menuOpen = $state(false);
@@ -277,9 +278,20 @@
         </a>
       </div>
 
-      <div class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400">
-        <MapPin size={14} class="text-[#0EA5E9]" />
-        <span>{CONTACT_INFO.location}</span>
+      <div class="flex flex-wrap items-center gap-3">
+        <a
+          href={CV_INFO.href}
+          download={CV_INFO.downloadName}
+          class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#0EA5E9] hover:bg-[#38BDF8] text-[#070B14] font-extrabold text-xs tracking-wider uppercase border-2 border-[#0A0A0A] shadow-[2px_2px_0_#0A0A0A] transition-all"
+        >
+          <Download size={14} strokeWidth={2.5} />
+          <span>{CV_INFO.label} (PDF)</span>
+        </a>
+
+        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400">
+          <MapPin size={14} class="text-[#0EA5E9]" />
+          <span>{CONTACT_INFO.location}</span>
+        </div>
       </div>
     </div>
   </div>

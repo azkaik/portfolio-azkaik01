@@ -15,6 +15,12 @@ export const HERO_DATA = {
   ],
 }
 
+export const CV_INFO = {
+  href: '/cv-ikhwanul-azka.pdf',
+  downloadName: 'CV-Ikhwanul-Azka.pdf',
+  label: 'Download CV',
+}
+
 export const MENU_GROUPS = [
   {
     index: '01.',
