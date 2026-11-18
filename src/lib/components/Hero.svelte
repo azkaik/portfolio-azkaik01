@@ -1,8 +1,6 @@
 <script>
   import Mail from 'lucide-svelte/icons/mail';
   import MessageCircle from 'lucide-svelte/icons/message-circle';
-  import Menu from 'lucide-svelte/icons/menu';
-  import X from 'lucide-svelte/icons/x';
   import { HERO_DATA, CONTACT_INFO } from '../data/portfolio.js';
   import AzkaikPortrait from './AzkaikPortrait.svelte';
   import InstagramIcon from './InstagramIcon.svelte';
@@ -10,7 +8,6 @@
   let heroEl = $state(null);
   let parallaxX = $state(0);
   let parallaxY = $state(0);
-  let mobileMenuOpen = $state(false);
 
   function handlePointerMove(event) {
     if (!heroEl) return;
@@ -35,10 +32,6 @@
     parallaxX = 0;
     parallaxY = 0;
   }
-
-  function closeMobileMenu() {
-    mobileMenuOpen = false;
-  }
 </script>
 
 <svelte:window onmousemove={handlePointerMove} onblur={resetParallax} />
@@ -46,69 +39,13 @@
 <section
   bind:this={heroEl}
   id="top"
-  class="relative min-h-[100svh] lg:min-h-[680px] lg:h-[100svh] lg:max-h-[940px] w-full overflow-hidden bg-[#4F46E5] text-white flex flex-col justify-between"
+  class="relative min-h-[100svh] lg:min-h-[680px] lg:h-[100svh] lg:max-h-[940px] w-full overflow-hidden bg-[#4F46E5] text-white flex flex-col justify-between pt-20 sm:pt-24 lg:pt-20"
 >
   <!-- Subtle poster ambient depth (strictly Indigo/Cyan, no red) -->
   <div
     class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_78%_48%,rgba(14,165,233,0.18),transparent_52%),radial-gradient(circle_at_15%_20%,rgba(129,140,248,0.28),transparent_45%)]"
     aria-hidden="true"
   ></div>
-
-  <!-- Top Navigation -->
-  <header class="relative z-30 w-full max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16 pt-7 sm:pt-9 flex items-center justify-between lg:justify-end">
-    <!-- Mobile subtle brand mark -->
-    <a
-      href="#top"
-      class="lg:hidden font-display text-2xl tracking-wide text-white hover:text-[#0A0A0A] transition-colors"
-    >
-      AZKAIK
-    </a>
-
-    <!-- Desktop Minimal Nav (Top-Right) -->
-    <nav class="hidden sm:flex items-center gap-8 lg:gap-12" aria-label="Navigasi utama">
-      {#each HERO_DATA.navLinks as link}
-        <a
-          href={link.href}
-          class="relative py-1 text-[15px] font-medium tracking-wide text-white/90 hover:text-white transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#0EA5E9] after:transition-all after:duration-200 hover:after:w-full"
-        >
-          {link.label}
-        </a>
-      {/each}
-    </nav>
-
-    <!-- Mobile Menu Toggle -->
-    <button
-      type="button"
-      class="sm:hidden p-2 rounded-lg text-white hover:bg-white/15 transition-colors cursor-pointer"
-      onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
-      aria-label={mobileMenuOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi'}
-      aria-expanded={mobileMenuOpen}
-    >
-      {#if mobileMenuOpen}
-        <X size={24} />
-      {:else}
-        <Menu size={24} />
-      {/if}
-    </button>
-  </header>
-
-  <!-- Mobile Dropdown Navigation -->
-  {#if mobileMenuOpen}
-    <nav
-      class="sm:hidden relative z-30 mx-6 mt-2 rounded-xl bg-[#312E81]/95 backdrop-blur-md border border-white/15 p-4 flex flex-col gap-2 shadow-2xl"
-      aria-label="Navigasi seluler"
-    >
-      {#each HERO_DATA.navLinks as link}
-        <a
-          href={link.href}
-          onclick={closeMobileMenu}
-          class="px-3 py-2.5 rounded-lg text-sm font-semibold text-white/90 hover:text-white hover:bg-white/10 transition-colors"
-        >
-          {link.label}
-        </a>
-      {/each}
-    </nav>
-  {/if}
 
   <!-- Left Vertical Social Bar (Desktop & Tablet) -->
   <aside
@@ -148,9 +85,9 @@
   </aside>
 
   <!-- Main Hero Stage -->
-  <div class="relative z-20 flex-1 w-full max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col justify-between pt-8 lg:pt-0">
+  <div class="relative z-20 flex-1 w-full max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col justify-between pt-4 lg:pt-0">
     <!-- Left Column: Typography + Bottom 3 Highlights -->
-    <div class="w-full lg:w-[62%] sm:pl-14 lg:pl-20 xl:pl-24 flex-1 flex flex-col justify-between py-6 sm:py-10 lg:py-12">
+    <div class="w-full lg:w-[62%] sm:pl-14 lg:pl-16 xl:pl-20 flex-1 flex flex-col justify-between py-4 sm:py-8 lg:py-12">
       <!-- Vertical center spacer so typography sits visually balanced like the reference poster -->
       <div class="hidden lg:block"></div>
 
@@ -202,11 +139,11 @@
 
       <!-- Bottom 3 Highlights Separated by Thin Vertical Lines -->
       <div class="pt-4 lg:pt-8">
-        <div class="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap items-start md:items-center gap-3 md:gap-0 text-xs sm:text-[13px] xl:text-[13.5px] font-medium text-white/95">
+        <div class="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap items-start md:items-center gap-3 md:gap-0 text-xs lg:text-[12px] xl:text-[12.5px] font-medium text-white/95">
           {#each HERO_DATA.highlights as item, idx}
             {#if idx > 0}
               <span
-                class="hidden md:inline-block w-px h-5 bg-white/40 mx-3.5 xl:mx-5 shrink-0"
+                class="hidden md:inline-block w-px h-4 bg-white/40 mx-2.5 xl:mx-3.5 shrink-0"
                 aria-hidden="true"
               ></span>
             {/if}
@@ -223,7 +160,7 @@
   </div>
 
   <!-- Desktop Portrait Flush to Bottom-Right Edge of Hero Poster -->
-  <div class="hidden lg:block pointer-events-none absolute right-0 bottom-0 z-10 w-[42%] max-w-[540px] xl:max-w-[590px]">
+  <div class="hidden lg:block pointer-events-none absolute right-0 bottom-0 z-10 w-[39%] max-w-[490px] xl:max-w-[535px]">
     <AzkaikPortrait {parallaxX} {parallaxY} />
   </div>
 </section>

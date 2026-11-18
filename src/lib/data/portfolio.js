@@ -15,6 +15,97 @@ export const HERO_DATA = {
   ],
 }
 
+export const MENU_GROUPS = [
+  {
+    index: '01.',
+    title: 'EXPLORE',
+    subtitle: 'Beranda, Tentang & Perkenalan',
+    items: [
+      {
+        label: 'BERANDA',
+        description: 'Poster Hero & 3 sorotan utama',
+        href: '#top',
+        external: false,
+      },
+      {
+        label: 'ABOUT ME',
+        description: 'Latar belakang, minat teknologi & sains',
+        href: '#about',
+        external: false,
+      },
+    ],
+  },
+  {
+    index: '02.',
+    title: 'PROFILE',
+    subtitle: 'Pengalaman, Pendidikan, Software & Skills',
+    items: [
+      {
+        label: 'EXPERIENCE',
+        description: 'Mentor ICC 2026, YFSC & Juara Inovasi ICC 2025',
+        href: '#experience',
+        external: false,
+      },
+      {
+        label: 'EDUCATION',
+        description: 'Jaz Academy & Jaz Courses',
+        href: '#education',
+        external: false,
+      },
+      {
+        label: 'SOFTWARE & SKILLS',
+        description: 'MOHO, Adobe Animate, Clip Studio Paint, Krita & 10 Skills',
+        href: '#software',
+        external: false,
+      },
+    ],
+  },
+  {
+    index: '03.',
+    title: 'LEARNING JOURNEY',
+    subtitle: 'Skill & Learning Frontend, Git & AI',
+    items: [
+      {
+        label: 'LEARNING JOURNEY',
+        description: 'Jaz Academy, GIT Courses, Udemy & WPU Courses',
+        href: '#learning',
+        external: false,
+      },
+    ],
+  },
+  {
+    index: '04.',
+    title: 'CONTACT & SOCIALS',
+    subtitle: 'Instagram, Email, WhatsApp & Lokasi',
+    items: [
+      {
+        label: 'CONTACT SECTION',
+        description: 'Salin email & informasi kontak Tasikmalaya',
+        href: '#contact',
+        external: false,
+      },
+      {
+        label: 'INSTAGRAM',
+        description: '@azkaik01',
+        href: 'https://instagram.com/azkaik01',
+        external: true,
+      },
+      {
+        label: 'WHATSAPP',
+        description: '+62-896-5775-5757',
+        href: 'https://wa.me/6289657755757',
+        external: true,
+      },
+      {
+        label: 'EMAIL',
+        description: 'azkaik@jazacademy.id',
+        href: 'mailto:azkaik@jazacademy.id',
+        external: true,
+      },
+    ],
+  },
+]
+
 export const ABOUT_TEXT =
   'Saya adalah siswa kelas 9 Home Schooling yang memiliki ketertarikan tinggi pada dunia teknologi, pemrograman, dan sains. Aktif mengembangkan konten digital edukatif seputar coding (Python, pembuatan game, dan pengembangan web), mengeksplorasi proyek lunak, serta melakukan penelitian ilmiah sederhana. Berpengalaman berkomunikasi aktif dalam bahasa Inggris, senang berdiskusi kritis, dan selalu antusias menyampaikan ide-ide teknis dengan cara yang mudah dipahami dan menarik.'
 

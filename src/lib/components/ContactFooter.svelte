@@ -200,7 +200,7 @@
     <div
       role="status"
       aria-live="polite"
-      class="fixed top-6 right-6 z-50 animate-toast-in flex items-center gap-3 px-4 py-3 rounded-xl bg-[#111827]/95 backdrop-blur-md border border-[#6366F1]/60 shadow-[0_12px_32px_rgba(0,0,0,0.5)] text-sm font-medium text-white"
+      class="fixed top-24 right-6 z-50 animate-toast-in flex items-center gap-3 px-4 py-3 rounded-xl bg-[#111827]/95 backdrop-blur-md border border-[#6366F1]/60 shadow-[0_12px_32px_rgba(0,0,0,0.5)] text-sm font-medium text-white"
     >
       <span class="w-6 h-6 rounded-full bg-[#0EA5E9]/20 text-[#38BDF8] flex items-center justify-center shrink-0">
         <Check size={14} />

@@ -59,11 +59,11 @@
     </div>
 
     <!-- ================= PROFILE (EXPERIENCE, EDUCATION, SKILLS, SOFTWARE) ================= -->
-    <div id="profile" class="scroll-mt-12 space-y-14">
+    <div id="profile" class="scroll-mt-24 space-y-14">
       <!-- Experience + Education Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <!-- Experience Timeline (7 cols) -->
-        <div class="lg:col-span-7 space-y-6">
+        <div id="experience" class="lg:col-span-7 scroll-mt-24 space-y-6">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-xl bg-[#6366F1]/15 border border-[#6366F1]/35 flex items-center justify-center text-[#818CF8]">
               <Briefcase size={20} />
@@ -120,7 +120,7 @@
         <!-- Education + Software Column (5 cols) -->
         <div class="lg:col-span-5 space-y-10">
           <!-- Education -->
-          <div class="space-y-5">
+          <div id="education" class="scroll-mt-24 space-y-5">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-xl bg-[#0EA5E9]/15 border border-[#0EA5E9]/35 flex items-center justify-center text-[#38BDF8]">
                 <GraduationCap size={20} />
@@ -155,7 +155,7 @@
           </div>
 
           <!-- Prominent Software Badges -->
-          <div class="space-y-5">
+          <div id="software" class="scroll-mt-24 space-y-5">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-xl bg-[#6366F1]/15 border border-[#6366F1]/35 flex items-center justify-center text-[#A5B4FC]">
                 <Clapperboard size={20} />
@@ -180,7 +180,7 @@
       </div>
 
       <!-- Skills Pills Section -->
-      <div class="rounded-2xl bg-[#16171F]/70 border border-white/10 p-6 sm:p-8">
+      <div id="skills" class="scroll-mt-24 rounded-2xl bg-[#16171F]/70 border border-white/10 p-6 sm:p-8">
         <div class="flex items-center gap-3 mb-5">
           <div class="w-9 h-9 rounded-lg bg-[#6366F1]/15 border border-[#6366F1]/35 flex items-center justify-center text-[#818CF8]">
             <Layers size={18} />
