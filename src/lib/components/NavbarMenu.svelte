@@ -9,13 +9,18 @@
   import MessageCircle from 'lucide-svelte/icons/message-circle';
   import MapPin from 'lucide-svelte/icons/map-pin';
   import Download from 'lucide-svelte/icons/download';
-  import { HERO_DATA, MENU_GROUPS, CONTACT_INFO, CV_INFO } from '../data/portfolio.js';
+  import Sun from 'lucide-svelte/icons/sun';
+  import Moon from 'lucide-svelte/icons/moon';
+  import { CONTENT, CONTACT_INFO, CV_INFO } from '../data/portfolio.js';
+  import { preferences } from '../stores/preferences.svelte.js';
   import InstagramIcon from './InstagramIcon.svelte';
 
   let menuOpen = $state(false);
   let openGroupIndex = $state(0);
   let isScrolled = $state(false);
   let activeHref = $state('#top');
+
+  const t = $derived(CONTENT[preferences.lang]);
 
   function toggleMenu() {
     menuOpen = !menuOpen;
@@ -39,7 +44,6 @@
       closeMenu();
       const target = document.querySelector(href);
       if (target) {
-        // Delay scroll by one frame so body overflow unlock takes effect cleanly
         requestAnimationFrame(() => {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
@@ -87,15 +91,15 @@
 
 <!-- Floating Pill Header -->
 <header class="fixed top-0 left-0 right-0 z-40 pointer-events-none">
-  <div class="w-full max-w-[1380px] mx-auto px-5 sm:px-10 lg:px-16 pt-5 sm:pt-6 flex items-center justify-between gap-3">
+  <div class="w-full max-w-[1380px] mx-auto px-4 sm:px-10 lg:px-16 pt-4 sm:pt-6 flex items-center justify-between gap-2 sm:gap-3">
     <!-- Left Brand Pill -->
     <a
       href="#top"
       onclick={(e) => handleNavClick(e, '#top')}
-      class="pointer-events-auto inline-flex items-center gap-2.5 px-4 py-2 rounded-full border transition-all duration-200 {isScrolled
-        ? 'bg-[#090B14]/90 backdrop-blur-md border-white/20 shadow-[0_8px_24px_rgba(5,8,20,0.45)]'
-        : 'bg-[#090B14]/75 backdrop-blur-md border-white/25 shadow-[0_6px_18px_rgba(10,10,28,0.28)]'} text-white hover:border-[#0EA5E9]"
-      aria-label="Kembali ke beranda Azkaik"
+      class="pointer-events-auto inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full border transition-all duration-200 bg-white/90 dark:bg-[#090B14]/85 backdrop-blur-md border-slate-900/15 dark:border-white/20 text-slate-900 dark:text-white hover:border-[#0EA5E9] {isScrolled
+        ? 'shadow-[0_8px_24px_rgba(15,23,42,0.14)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.45)]'
+        : 'shadow-[0_6px_18px_rgba(15,23,42,0.1)] dark:shadow-[0_6px_18px_rgba(10,10,28,0.28)]'}"
+      aria-label={t.ui.homeAria}
     >
       <span class="w-2 h-2 rounded-full bg-[#0EA5E9] shadow-[0_0_8px_#0EA5E9]" aria-hidden="true"></span>
       <span class="font-display text-base sm:text-lg tracking-wider leading-none">
@@ -104,39 +108,80 @@
     </a>
 
     <!-- Right Pill Controls -->
-    <div class="pointer-events-auto flex items-center gap-2.5 sm:gap-3">
+    <div class="pointer-events-auto flex items-center gap-1.5 sm:gap-2.5">
       <!-- Desktop Quick Anchor Pills -->
       <nav
-        class="hidden md:inline-flex items-center gap-1 p-1.5 rounded-full border transition-all duration-200 {isScrolled
-          ? 'bg-[#090B14]/90 backdrop-blur-md border-white/20 shadow-[0_8px_24px_rgba(5,8,20,0.45)]'
-          : 'bg-[#090B14]/65 backdrop-blur-md border-white/20 shadow-[0_6px_18px_rgba(10,10,28,0.25)]'}"
+        class="hidden lg:inline-flex items-center gap-1 p-1.5 rounded-full border transition-all duration-200 bg-white/88 dark:bg-[#090B14]/80 backdrop-blur-md border-slate-900/15 dark:border-white/20 shadow-[0_6px_18px_rgba(15,23,42,0.1)] dark:shadow-[0_8px_24px_rgba(5,8,20,0.4)]"
         aria-label="Navigasi utama"
       >
-        {#each HERO_DATA.navLinks as link}
+        {#each t.navLinks as link}
           {@const isActive = activeHref === link.href}
           <a
             href={link.href}
             onclick={(e) => handleNavClick(e, link.href)}
             class="px-3.5 py-1.5 rounded-full text-[13px] font-semibold tracking-wide transition-all duration-200 {isActive
-              ? 'bg-[#4F46E5] text-white shadow-[0_2px_10px_rgba(79,70,229,0.5)]'
-              : 'text-white/85 hover:text-white hover:bg-white/10'}"
+              ? 'bg-[#4F46E5] text-white shadow-[0_2px_10px_rgba(79,70,229,0.45)]'
+              : 'text-slate-700 hover:text-slate-950 hover:bg-slate-900/5 dark:text-white/85 dark:hover:text-white dark:hover:bg-white/10'}"
           >
             {link.label}
           </a>
         {/each}
       </nav>
 
+      <!-- Language Switcher Pill (ID | EN) -->
+      <div
+        class="inline-flex items-center p-0.5 sm:p-1 rounded-full border bg-white/90 dark:bg-[#090B14]/85 backdrop-blur-md border-slate-900/15 dark:border-white/20 shadow-[0_6px_18px_rgba(15,23,42,0.1)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)]"
+        role="group"
+        aria-label="Language switcher"
+      >
+        <button
+          type="button"
+          onclick={() => preferences.setLang('id')}
+          aria-pressed={preferences.lang === 'id'}
+          class="px-2 sm:px-2.5 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all cursor-pointer {preferences.lang === 'id'
+            ? 'bg-[#4F46E5] text-white shadow-sm'
+            : 'text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white'}"
+        >
+          ID
+        </button>
+        <button
+          type="button"
+          onclick={() => preferences.setLang('en')}
+          aria-pressed={preferences.lang === 'en'}
+          class="px-2 sm:px-2.5 py-1 rounded-full text-[11px] font-extrabold tracking-wider transition-all cursor-pointer {preferences.lang === 'en'
+            ? 'bg-[#4F46E5] text-white shadow-sm'
+            : 'text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white'}"
+        >
+          EN
+        </button>
+      </div>
+
+      <!-- Theme Toggle Pill (Light / Dark) -->
+      <button
+        type="button"
+        onclick={preferences.toggleTheme}
+        aria-label={preferences.theme === 'dark' ? t.ui.switchToLightAria : t.ui.switchToDarkAria}
+        title={preferences.theme === 'dark' ? t.ui.switchToLightAria : t.ui.switchToDarkAria}
+        class="w-8 h-8 sm:w-9 sm:h-9 rounded-full inline-flex items-center justify-center border bg-white/90 dark:bg-[#090B14]/85 backdrop-blur-md border-slate-900/15 dark:border-white/20 text-[#4F46E5] dark:text-[#FACC15] hover:border-[#0EA5E9] shadow-[0_6px_18px_rgba(15,23,42,0.1)] dark:shadow-[0_6px_18px_rgba(5,8,20,0.35)] transition-all cursor-pointer shrink-0"
+      >
+        {#if preferences.theme === 'dark'}
+          <Sun size={16} strokeWidth={2.3} />
+        {:else}
+          <Moon size={16} strokeWidth={2.3} />
+        {/if}
+      </button>
+
       <!-- Tactile Cyan MENU Pill Button -->
       <button
         type="button"
         onclick={toggleMenu}
-        class="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-[#0EA5E9] hover:bg-[#38BDF8] text-[#070B14] font-extrabold text-xs sm:text-[13px] tracking-wider uppercase border-2 border-[#0A0A0A] shadow-[3px_3px_0_#0A0A0A] hover:shadow-[4px_4px_0_#0A0A0A] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0_#0A0A0A] transition-all duration-150 cursor-pointer whitespace-nowrap shrink-0"
-        aria-label="Buka menu navigasi"
+        class="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#0EA5E9] hover:bg-[#38BDF8] text-[#070B14] font-extrabold text-xs sm:text-[13px] tracking-wider uppercase border-2 border-[#0A0A0A] shadow-[3px_3px_0_#0A0A0A] hover:shadow-[4px_4px_0_#0A0A0A] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0_#0A0A0A] transition-all duration-150 cursor-pointer whitespace-nowrap shrink-0"
+        aria-label={t.ui.openMenuAria}
         aria-expanded={menuOpen}
         aria-controls="fullscreen-nav-overlay"
       >
-        <Menu size={16} strokeWidth={2.5} />
-        <span>MENU</span>
+        <Menu size={15} strokeWidth={2.5} />
+        <span>{t.ui.menuLabel}</span>
       </button>
     </div>
   </div>
@@ -148,37 +193,37 @@
     id="fullscreen-nav-overlay"
     role="dialog"
     aria-modal="true"
-    aria-label="Menu navigasi portofolio"
+    aria-label={t.ui.openMenuAria}
     transition:fade={{ duration: 180 }}
-    class="fixed inset-0 z-50 bg-[#080A14]/[0.98] backdrop-blur-xl text-white overflow-y-auto flex flex-col justify-between"
+    class="fixed inset-0 z-50 bg-[#F8FAFC]/[0.98] dark:bg-[#080A14]/[0.98] backdrop-blur-xl text-slate-900 dark:text-white overflow-y-auto flex flex-col justify-between transition-colors duration-200"
   >
     <!-- Top Bar inside Overlay -->
-    <div class="w-full max-w-[1140px] mx-auto px-5 sm:px-10 pt-6 pb-5 border-b border-white/10 flex items-center justify-between gap-4">
+    <div class="w-full max-w-[1140px] mx-auto px-5 sm:px-10 pt-6 pb-5 border-b border-slate-200 dark:border-white/10 flex items-center justify-between gap-4">
       <div class="flex items-center gap-2.5 text-sm sm:text-base font-extrabold tracking-widest uppercase">
-        <span class="text-white font-display text-xl sm:text-2xl tracking-wider">AZKAIK</span>
+        <span class="text-slate-900 dark:text-white font-display text-xl sm:text-2xl tracking-wider">AZKAIK</span>
         <span class="text-[#6366F1]" aria-hidden="true">//</span>
-        <span class="text-[#0EA5E9]">NAVIGATION</span>
+        <span class="text-[#0284C7] dark:text-[#0EA5E9]">NAVIGATION</span>
       </div>
 
       <button
         type="button"
         onclick={closeMenu}
-        class="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-[#13172B] hover:bg-[#1B2240] text-white border border-white/25 hover:border-[#0EA5E9] text-xs font-extrabold tracking-wider uppercase whitespace-nowrap shrink-0 cursor-pointer transition-colors"
-        aria-label="Tutup menu navigasi"
+        class="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-white hover:bg-slate-100 dark:bg-[#13172B] dark:hover:bg-[#1B2240] text-slate-900 dark:text-white border border-slate-300 dark:border-white/25 hover:border-[#0EA5E9] text-xs font-extrabold tracking-wider uppercase whitespace-nowrap shrink-0 cursor-pointer transition-colors"
+        aria-label={t.ui.closeMenuAria}
       >
-        <span>CLOSE</span>
+        <span>{t.ui.closeLabel}</span>
         <X size={15} strokeWidth={2.5} />
       </button>
     </div>
 
     <!-- Accordion Navigation Cards -->
-    <nav class="w-full max-w-[820px] mx-auto px-5 sm:px-10 py-8 sm:py-10 flex-1 space-y-3.5" aria-label="Daftar bagian portofolio">
-      {#each MENU_GROUPS as group, idx}
+    <nav class="w-full max-w-[820px] mx-auto px-5 sm:px-10 py-8 sm:py-10 flex-1 space-y-3.5" aria-label="Menu sections">
+      {#each t.menuGroups as group, idx}
         {@const isOpen = openGroupIndex === idx}
         <div
           class="rounded-2xl border transition-all duration-200 {isOpen
-            ? 'bg-[#101426] border-[#6366F1]/75 shadow-[0_12px_36px_rgba(79,70,229,0.18)]'
-            : 'bg-[#0D1020] border-white/12 hover:border-white/28'}"
+            ? 'bg-white border-[#4F46E5]/60 shadow-[0_12px_36px_rgba(79,70,229,0.12)] dark:bg-[#101426] dark:border-[#6366F1]/75 dark:shadow-[0_12px_36px_rgba(79,70,229,0.18)]'
+            : 'bg-white/75 border-slate-200 hover:border-slate-300 dark:bg-[#0D1020] dark:border-white/12 dark:hover:border-white/28'}"
         >
           <button
             type="button"
@@ -187,14 +232,14 @@
             aria-expanded={isOpen}
           >
             <div class="flex items-start gap-3.5 sm:gap-4 min-w-0">
-              <span class="text-xs sm:text-sm font-bold tracking-wider text-[#0EA5E9] pt-1 shrink-0 font-mono">
+              <span class="text-xs sm:text-sm font-bold tracking-wider text-[#0284C7] dark:text-[#0EA5E9] pt-1 shrink-0 font-mono">
                 {group.index}
               </span>
               <div class="min-w-0">
-                <span class="block font-display text-2xl sm:text-3xl tracking-wide text-white leading-none">
+                <span class="block font-display text-2xl sm:text-3xl tracking-wide text-slate-900 dark:text-white leading-none">
                   {group.title}
                 </span>
-                <span class="block mt-1.5 text-xs sm:text-sm text-slate-400">
+                <span class="block mt-1.5 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
                   {group.subtitle}
                 </span>
               </div>
@@ -202,8 +247,8 @@
 
             <span
               class="w-9 h-9 rounded-full border flex items-center justify-center shrink-0 transition-all duration-200 {isOpen
-                ? 'border-[#6366F1] bg-[#6366F1]/20 text-white rotate-180'
-                : 'border-white/20 text-slate-400'}"
+                ? 'border-[#4F46E5] bg-[#4F46E5]/10 text-[#4F46E5] dark:border-[#6366F1] dark:bg-[#6366F1]/20 dark:text-white rotate-180'
+                : 'border-slate-300 text-slate-500 dark:border-white/20 dark:text-slate-400'}"
               aria-hidden="true"
             >
               <ChevronDown size={18} />
@@ -218,10 +263,10 @@
                   target={item.external ? '_blank' : undefined}
                   rel={item.external ? 'noopener noreferrer' : undefined}
                   onclick={(e) => handleNavClick(e, item.href, item.external)}
-                  class="group flex items-center justify-between gap-4 rounded-xl bg-[#080B16] hover:bg-[#161D38] border border-white/10 hover:border-[#0EA5E9]/65 px-4 py-3.5 transition-all duration-150"
+                  class="group flex items-center justify-between gap-4 rounded-xl bg-slate-50 hover:bg-[#EEF2FF] dark:bg-[#080B16] dark:hover:bg-[#161D38] border border-slate-200 hover:border-[#4F46E5]/55 dark:border-white/10 dark:hover:border-[#0EA5E9]/65 px-4 py-3.5 transition-all duration-150"
                 >
                   <div class="flex items-start gap-3 min-w-0">
-                    <span class="mt-0.5 text-[#0EA5E9] group-hover:translate-x-0.5 transition-transform shrink-0">
+                    <span class="mt-0.5 text-[#0284C7] dark:text-[#0EA5E9] group-hover:translate-x-0.5 transition-transform shrink-0">
                       {#if item.external}
                         <ArrowUpRight size={17} />
                       {:else}
@@ -229,10 +274,10 @@
                       {/if}
                     </span>
                     <div class="min-w-0">
-                      <p class="text-sm sm:text-[15px] font-bold tracking-wide text-white group-hover:text-[#38BDF8] transition-colors">
+                      <p class="text-sm sm:text-[15px] font-bold tracking-wide text-slate-900 group-hover:text-[#4F46E5] dark:text-white dark:group-hover:text-[#38BDF8] transition-colors">
                         {item.label}
                       </p>
-                      <p class="mt-0.5 text-xs text-slate-400 truncate">
+                      <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400 truncate">
                         {item.description}
                       </p>
                     </div>
@@ -245,24 +290,24 @@
       {/each}
     </nav>
 
-    <!-- Bottom Social & Location Bar inside Overlay -->
-    <div class="w-full max-w-[1140px] mx-auto px-5 sm:px-10 py-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <!-- Bottom Social, CV & Location Bar inside Overlay -->
+    <div class="w-full max-w-[1140px] mx-auto px-5 sm:px-10 py-6 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div class="flex flex-wrap items-center gap-2.5">
-        <span class="text-xs font-bold uppercase tracking-widest text-slate-400 mr-1">
-          Find Me:
+        <span class="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mr-1">
+          {t.ui.findMe}
         </span>
         <a
           href={CONTACT_INFO.instagram.url}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-[#6366F1]/25 border border-white/12 hover:border-[#6366F1] text-xs font-medium text-slate-200 transition-colors"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-[#EEF2FF] dark:bg-white/5 dark:hover:bg-[#6366F1]/25 border border-slate-200 hover:border-[#4F46E5] dark:border-white/12 dark:hover:border-[#6366F1] text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors"
         >
           <InstagramIcon size={14} />
           <span>{CONTACT_INFO.instagram.handle}</span>
         </a>
         <a
           href={CONTACT_INFO.email.mailto}
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-[#0EA5E9]/20 border border-white/12 hover:border-[#0EA5E9] text-xs font-medium text-slate-200 transition-colors"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-sky-50 dark:bg-white/5 dark:hover:bg-[#0EA5E9]/20 border border-slate-200 hover:border-[#0EA5E9] dark:border-white/12 dark:hover:border-[#0EA5E9] text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors"
         >
           <Mail size={14} />
           <span>{CONTACT_INFO.email.address}</span>
@@ -271,7 +316,7 @@
           href={CONTACT_INFO.whatsapp.url}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-[#6366F1]/25 border border-white/12 hover:border-[#6366F1] text-xs font-medium text-slate-200 transition-colors"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-[#EEF2FF] dark:bg-white/5 dark:hover:bg-[#6366F1]/25 border border-slate-200 hover:border-[#4F46E5] dark:border-white/12 dark:hover:border-[#6366F1] text-xs font-medium text-slate-700 dark:text-slate-200 transition-colors"
         >
           <MessageCircle size={14} />
           <span>WhatsApp</span>
@@ -285,11 +330,11 @@
           class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#0EA5E9] hover:bg-[#38BDF8] text-[#070B14] font-extrabold text-xs tracking-wider uppercase border-2 border-[#0A0A0A] shadow-[2px_2px_0_#0A0A0A] transition-all"
         >
           <Download size={14} strokeWidth={2.5} />
-          <span>{CV_INFO.label} (PDF)</span>
+          <span>{t.ui.downloadCvPdf}</span>
         </a>
 
-        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400">
-          <MapPin size={14} class="text-[#0EA5E9]" />
+        <div class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">
+          <MapPin size={14} class="text-[#0284C7] dark:text-[#0EA5E9]" />
           <span>{CONTACT_INFO.location}</span>
         </div>
       </div>
